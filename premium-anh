@@ -914,7 +914,7 @@ AutoFarm:AddToggle({
 
 
 	local selectedBoss = AutoFarm:AddDropdown({
-		Name = "Boss List",
+		Name = "Select Boss",
 		Default = "...",
 		Options = Boss,
 		Callback = function(Value)
@@ -923,21 +923,15 @@ AutoFarm:AddToggle({
 	})
 
 
-	AutoFarm:AddButton({
-		Name = "Refresh Boss",
-		Callback = function()
-			selectedBoss:Clear()
-	for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-	if string.find(v.Name, "Boss") then
-		selectedBoss:Add(v.Name) 
-	end
-end
-end
-})
+AutoFarm:AddButton(
+    {Name = "Refresh Bosses", Callback = function()
+            selectedBoss:Refresh(Boss(), true)
+        end}
+)
 
 
 AutoFarm:AddToggle({
-	Name = "Auto Boss",
+	Name = "Auto Farm Boss",
 	Default = false,
 	Callback = function(Value)
 		AutoFarmBossQuest = Value
@@ -1016,48 +1010,51 @@ spawn(function()
 	})
   
 	    spawn(function()
-	        while task.wait() do
-	            if AutoEliteHunter then
-	                pcall(function()
-	                    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-	                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Diablo") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Deandre") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Urban") then
-	                            if game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
-	                                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-	                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-	                                        if v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" or v.Name == "Urban [Lv. 1750]" then
-	                                            repeat task.wait()
-	                                                EquipTool(SelectWeapon)
-	                                                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-	                                                MonsterPosition = v.HumanoidRootPart.CFrame
-	                                                v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
-	                                                v.Humanoid.JumpPower = 0
-	                                                v.Humanoid.WalkSpeed = 0
-	                                                v.HumanoidRootPart.CanCollide = false
-	                                                --v.Humanoid:ChangeState(14)
-	                                                --v.Humanoid:ChangeState(11)
-	                                                v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-													CLick()
-	                                            until AutoEliteHunter == false or v.Humanoid.Health <= 0 or not v.Parent
-	                                        end
-	                                    end
-	                                end
-	                            else
-	                                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") then
-	                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-	                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") then
-	                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-	                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") then
-	                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-	                                end
-	                            end
-	                        end
-	                    else
-	                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
-	                    end
-	                end)
-	            end
-	        end
-	    end)
+        while task.wait() do
+            if AutoEliteHunter then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Diablo") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Deandre") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Urban") then
+                            if game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
+                                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                        if v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" or v.Name == "Urban [Lv. 1750]" then
+                                            repeat task.wait()
+                                                EquipTool(SelectWeapon)
+                                                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                                MonsterPosition = v.HumanoidRootPart.CFrame
+                                                v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                                                v.Humanoid.JumpPower = 0
+                                                v.Humanoid.WalkSpeed = 0
+                                                v.HumanoidRootPart.CanCollide = false
+                                                --v.Humanoid:ChangeState(14)
+                                                --v.Humanoid:ChangeState(11)
+                                                FarmPos = v.HumanoidRootPart.CFrame
+                                                MonFarm = v.Name
+                                                Click()
+												ClickCamera()
+                                                v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+                                            until AutoEliteHunter == false or v.Humanoid.Health <= 0 or not v.Parent
+                                        end
+                                    end
+                                end
+                            else
+                                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                end
+                            end
+                        end
+                    else
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
+                    end
+                end)
+            end
+        end
+    end)
 
 
 
@@ -5201,10 +5198,7 @@ local args = {
     [2] = Vector3.new(-12463.6025390625, 378.3270568847656, -7566.0830078125)
 }
 
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5411.22021, 778.609863, -2682.27759, 0.927179396, 0, 0.374617696, 0, 1, 0, -0.374617696, 0, 0.927179396)
-wait(0)
+
 -- Script generated by SimpleSpy - credits to exx#9394
 
 local args = {
@@ -5238,7 +5232,7 @@ function two(gotoCFrame) --- Tween
       end
   
 end
-two(CFrame.new(-5100.7085, 29.968586, -6792.45459, -0.33648631, -0.0396691673, 0.940852463, -6.40461678e-07, 0.999112308, 0.0421253517, -0.941688359, 0.0141740013, -0.336187631))
+Tween(CFrame.new(-5100.7085, 29.968586, -6792.45459, -0.33648631, -0.0396691673, 0.940852463, -6.40461678e-07, 0.999112308, 0.0421253517, -0.941688359, 0.0141740013, -0.336187631))
 
 wait(13)
 for _,v in next, workspace.Boats.PirateBrigade:GetDescendants() do
@@ -5338,7 +5332,7 @@ local gg = getrawmetatable(game)
                       if not game:GetService("Workspace").Enemies:FindFirstChild("PirateBrigade") then 
                           if not game:GetService("Workspace").Enemies:FindFirstChild("PirateBasic") then
                               if not game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
-                                  buyb = TPP(CFrame.new(-11.78054428100586, 10.302456855773926, 2927.2255859375))
+                                  buyb = topos(CFrame.new(-11.78054428100586, 10.302456855773926, 2927.2255859375))
                                   if (CFrame.new(-11.78054428100586, 10.302456855773926, 2927.2255859375).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                       if buyb then buyb:Stop() end
                                       local args = {
