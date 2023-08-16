@@ -921,11 +921,17 @@ AutoFarm:AddToggle({
 	})
 
 
+
+
+
+
 AutoFarm:AddButton(
     {Name = "Làm Mới Boss", Callback = function()
             selectedBoss:Refresh(Boss(), true)
         end}
 )
+
+
 
 
 AutoFarm:AddToggle({
@@ -1067,6 +1073,95 @@ spawn(function()
 	  
 	  
 -------------------------------Items
+
+
+local Section = AutoFarm:AddSection({
+	Name = "Nguyên Liệu"
+})
+
+MaterialList = {
+  "Scrap Metal","Leather","Demonic Wisp","Conjured Cocoa","Dragon Scale","Gunpowder","Fish Tail","Mini Tusk"
+}
+
+
+
+
+AutoFarm:AddDropdown({
+	Name = "Chọn Nguyên Liệu",
+	Default = "...",
+	Options = MaterialList,
+	Callback = function(Value)
+	SelectMaterial = Value
+	end    
+})
+
+AutoFarm:AddToggle({
+	Name = "Cày",
+	Default = false,
+	Callback = function(Value)
+		AutoFarmMaterial = Value
+	end    
+})
+
+spawn(function()
+  while task.wait() do
+  if AutoFarmMaterial then
+  pcall(function()
+    MaterialMon(SelectMaterial)
+    if BypassTP then
+    if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - MPos.Position).Magnitude > 2000 then
+    BTP(MPos)
+    wait(3)
+    elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - MPos.Position).Magnitude < 2000 then
+    Tween(MPos)
+    end
+    else
+      Tween(MPos)
+    end
+    if game:GetService("Workspace").Enemies:FindFirstChild(MMon) then
+    for i,v in pairs (game.Workspace.Enemies:GetChildren()) do
+    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+    if v.Name == MMon then
+    repeat task.wait()
+    EquipTool(SelectWeapon)
+    Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+    v.HumanoidRootPart.Transparency = 1
+    v.Humanoid.JumpPower = 0
+    v.Humanoid.WalkSpeed = 0
+    v.HumanoidRootPart.CanCollide = false
+--v.Humanoid:ChangeState(11)
+--v.Humanoid:ChangeState(14)
+    FarmPos = v.HumanoidRootPart.CFrame
+    MonFarm = v.Name
+    Click()
+    if v.Humanoid.Health <= 0 and v.Humanoid:FindFirstChild("Animator") then
+    v.Humanoid.Animator:Destroy()
+    end
+    until not AutoFarmMaterial or not v.Parent or v.Humanoid.Health <= 0
+    end
+    end
+    end
+    else
+      for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()) do
+    if string.find(v.Name, MMon) then
+    if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude >= 10 then
+    Tween(v.CFrame * CFrame.new(posX,posY,posZ))
+    end
+    end
+    end
+    end
+    end)
+  end
+  end
+end)
+
+
+
+
+
+
+
 local Section = AutoFarm:AddSection({
 	Name = "Vũ khí"
 })
