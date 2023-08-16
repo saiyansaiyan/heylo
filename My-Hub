@@ -22,12 +22,12 @@ UICorner.Parent = Closed
 local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/saiyansaiyan/heylo/main/ui")()
 
 local win = lib:Window("Genius Hub",Color3.fromRGB(39, 228, 215), Enum.KeyCode.RightControl)
-lib:Notification("","Open Source ??", "Okay??")
+
 
 local Main = win:Tab("Main - Setting")
 local Stats = win:Tab("Stats")
 local Island = win:Tab("Travel")
-local Raid = win:Tab("Auto Raid")
+local Raid = win:Tab("Auto Raid - Esp")
 local Race = win:Tab("Race")
 local Fruit = win:Tab("Devil Fruit")
 local Pvp = win:Tab("Pvp")
@@ -4739,6 +4739,178 @@ Playerslist = {}
             CancelTween(_G.TeleportPly)
         end)
     end)
+	
+	
+	Pvp:Label("Aimbot ( Working 90% )")
+	
+	        local Circle = Drawing.new("Circle")
+        Circle.Color =  Color3.fromRGB(0, 244, 0)
+        Circle.Thickness = 1
+        Circle.Radius = 250
+        Circle.NumSides = 460
+        Circle.Filled = false
+        Circle.Transparency = 1
+        
+        game:GetService("RunService").Stepped:Connect(function()
+            Circle.Radius = _G.Select_Size_Fov
+            Circle.Thickness = 1
+            Circle.NumSides = 460
+            Circle.Position = game:GetService('UserInputService'):GetMouseLocation()
+            if _G.Show_Fov then
+                Circle.Visible = true
+            else
+                Circle.Visible = false
+            end
+        end)
+        Pvp:Slider("Fov Size",1,1000,100,function(value)
+            _G.Select_Size_Fov = value
+        end)
+        Pvp:Toggle("Show Fov",false,function(value)
+            _G.Show_Fov = value
+        end)
+        Pvp:Toggle("Auto Aimbot Nearest Player",false,function(value)
+            _G.Aimbot_Skill_Fov = value
+        end)
+        local lp = game:GetService('Players').LocalPlayer
+        local mouse = lp:GetMouse()
+        spawn(function()
+            while wait() do
+                if _G.Aimbot_Skill_Fov then
+                    pcall(function()
+                        local MaxDist, Closest = math.huge
+                        for i,v in pairs(game:GetService("Players"):GetChildren()) do 
+                            local Head = v.Character:FindFirstChild("HumanoidRootPart")
+                            local Pos, Vis = game.Workspace.CurrentCamera.WorldToScreenPoint(game.Workspace.CurrentCamera, Head.Position)
+                            local MousePos, TheirPos = Vector2.new(mouse.X, mouse.Y), Vector2.new(Pos.X, Pos.Y)
+                            local Dist = (TheirPos - MousePos).Magnitude
+                            if Dist < MaxDist and Dist <= _G.Select_Size_Fov and v.Name ~= game.Players.LocalPlayer.Name then
+                                MaxDist = Dist
+                                _G.Aim_Players = v
+                            end
+                        end
+                    end)
+                end
+            end
+        end)
+        spawn(function()
+            local gg = getrawmetatable(game)
+            local old = gg.__namecall
+            setreadonly(gg,false)
+            gg.__namecall = newcclosure(function(...)
+                local method = getnamecallmethod()
+                local args = {...}
+                if tostring(method) == "FireServer" then
+                    if tostring(args[1]) == "RemoteEvent" then
+                        if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
+                            if _G.Aimbot_Skill_Fov then
+                                args[2] = _G.Aim_Players.Character.HumanoidRootPart.Position
+                                return old(unpack(args))
+                            end
+                        end
+                    end
+                end
+                return old(...)
+            end)
+        end)
+	
+	Pvp:Label("Buff")
+	
+	
+	
+	Pvp:Toggle("Auto Active Race v3",false,function(v)
+		_G.Rv3 = v    
+	end)
+
+	Pvp:Toggle("Auto Active Race v4",false,function(v)
+		_G.Rv4 = v    
+	end)
+	
+
+  local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+y = debug.getupvalues(CombatFrameworkR)[2]
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack2 then
+            if typeof(y) == "table" then
+                pcall(function()
+                    CameraShaker:Stop()
+                    y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+                    y.activeController.timeToNextAttack = 0
+                    y.activeController.hitboxMagnitude = 100
+                    y.activeController.active = false
+                    y.activeController.timeToNextBlock = 0
+                    y.activeController.focusStart = 0
+                    y.activeController.increment = 4
+                    y.activeController.blocking = false
+                    y.activeController.attacking = false
+                    y.activeController.humanoid.AutoRotate = true
+                end)
+            end
+        end
+    end)
+end)
+
+
+
+
+
+	spawn(function()
+		while wait() do
+			pcall(function()
+				if _G.Rv3 then
+					game:GetService("VirtualInputManager"):SendKeyEvent(true,"T",false,game)
+					game:GetService("VirtualInputManager"):SendKeyEvent(false,"T",false,game)
+				end
+			end)
+		end
+	end)
+	spawn(function()
+		while wait() do
+			pcall(function()
+				if _G.Rv4 then
+					game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
+					game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
+				end
+			end)
+		end
+	end)
+
+	
+
+	Pvp:Toggle("Super Speed",false,function(v)
+		_G.GsE = v    
+	end)
+	spawn(function()
+		while wait() do
+			pcall(function()
+				if _G.GsE then
+					game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 300
+					game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 300
+					game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 300
+				end
+			end)
+		end
+	end)
+	
+	
+	Pvp:Toggle("Walk on Water",false,function(value)
+    _G.WalkWater = value
+end)
+
+spawn(function()
+        while task.wait() do
+            pcall(function()
+                if _G.WalkWater then
+                    game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,112,1000)
+                else
+                    game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
+                end
+            end)
+        end
+    end)
+	
+	
 -------------------------Shop
 
 S:Button("Buy Black Leg",function()
