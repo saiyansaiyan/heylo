@@ -21,7 +21,7 @@ UICorner.Parent = Closed
 
 local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/saiyansaiyan/heylo/main/ui")()
 
-local win = lib:Window("Genius Hub",Color3.fromRGB(39, 228, 215), Enum.KeyCode.RightControl)
+local win = lib:Window("Visual Hub",Color3.fromRGB(39, 228, 215), Enum.KeyCode.RightControl)
 
 
 local Main = win:Tab("Main - Setting")
