@@ -19,10 +19,10 @@ function mobileGGEZ()
     ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     ImageButton.BorderSizePixel = 0
     ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-    ImageButton.Size = UDim2.new(0, 50, 0, 50)
+    ImageButton.Size = UDim2.new(0, 120, 0, 120)
     ImageButton.Draggable = true
     ImageButton.BackgroundTransparency = 1
-    ImageButton.Image = "http://www.roblox.com/asset/?id=14538183356"
+    ImageButton.Image = "http://www.roblox.com/asset/?id=14539549006"
     ImageButton.MouseButton1Down:connect(function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
@@ -32,7 +32,7 @@ mobileGGEZ()
 
 local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/saiyansaiyan/heylo/main/ui")()
 
-local win = lib:Window("Visual Hub",Color3.fromRGB(39, 228, 215), Enum.KeyCode.RightControl)
+local win = lib:Window("Zoru Hub",Color3.fromRGB(39, 228, 215), Enum.KeyCode.RightControl)
 
 
 local Main = win:Tab("Main - Setting")
