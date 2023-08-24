@@ -104,7 +104,7 @@ local TweenSpeed = 300
               FastAttackSpeed = famobile
             end)
             
-_G.Fast_Delay = 0.2
+_G.Fast_Delay = 0.45
 
 local CurveFrame = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework")))[2]
 local VirtualUser = game:GetService("VirtualUser")
