@@ -2428,53 +2428,53 @@ local islandlist =  {"Mansion","Port Town","Great Tree","Castle On The Sea","Min
 		if _G.TeleportIsland == true then
 		repeat wait()
 		if _G.SelectIsland == "WindMill" then
-		  Tween(CFrame.new(979.79895019531, 16.516613006592, 1429.0466308594))
+		  TP2(CFrame.new(979.79895019531, 16.516613006592, 1429.0466308594))
 		elseif _G.SelectIsland == "Marine" then
-		  Tween(CFrame.new(-2566.4296875, 6.8556680679321, 2045.2561035156))
+		  TP2(CFrame.new(-2566.4296875, 6.8556680679321, 2045.2561035156))
 		elseif _G.SelectIsland == "Middle Town" then
-		  Tween(CFrame.new(-690.33081054688, 15.09425163269, 1582.2380371094))
+		  TP2(CFrame.new(-690.33081054688, 15.09425163269, 1582.2380371094))
 		elseif _G.SelectIsland == "Jungle" then
-		  Tween(CFrame.new(-1612.7957763672, 36.852081298828, 149.12843322754))
+		  TP2(CFrame.new(-1612.7957763672, 36.852081298828, 149.12843322754))
 		elseif _G.SelectIsland == "Pirate Village" then
-		  Tween(CFrame.new(-1181.3093261719, 4.7514905929565, 3803.5456542969))
+		  TP2(CFrame.new(-1181.3093261719, 4.7514905929565, 3803.5456542969))
 		elseif _G.SelectIsland == "Desert" then
-		  Tween(CFrame.new(944.15789794922, 20.919729232788, 4373.3002929688))
+		  TP2(CFrame.new(944.15789794922, 20.919729232788, 4373.3002929688))
 		elseif _G.SelectIsland == "Snow Island" then
-		  Tween(CFrame.new(1347.8067626953, 104.66806030273, -1319.7370605469))
+		  TP2(CFrame.new(1347.8067626953, 104.66806030273, -1319.7370605469))
 		elseif _G.SelectIsland == "MarineFord" then
-		  Tween(CFrame.new(-4914.8212890625, 50.963626861572, 4281.0278320313))
+		  TP2(CFrame.new(-4914.8212890625, 50.963626861572, 4281.0278320313))
 		elseif _G.SelectIsland == "Colosseum" then
-		  Tween(CFrame.new(-1427.6203613281, 7.2881078720093, -2792.7722167969))
+		  TP2(CFrame.new(-1427.6203613281, 7.2881078720093, -2792.7722167969))
 		elseif _G.SelectIsland == "Sky Island 1" then
-		  Tween(CFrame.new(-4869.1025390625, 733.46051025391, -2667.0180664063))
+		  TP2(CFrame.new(-4869.1025390625, 733.46051025391, -2667.0180664063))
 		elseif _G.SelectIsland == "Sky Island 2" then
-		  Tween:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
+		  TP2:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
 		elseif _G.SelectIsland == "Sky Island 3" then
-		  Tween:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
+		  TP2:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
 		elseif _G.SelectIsland == "Prison" then
-		  Tween(CFrame.new(4875.330078125, 5.6519818305969, 734.85021972656))
+		  TP2(CFrame.new(4875.330078125, 5.6519818305969, 734.85021972656))
 		elseif _G.SelectIsland == "Magma Village" then
-		  Tween(CFrame.new(-5247.7163085938, 12.883934020996, 8504.96875))
+		  TP2(CFrame.new(-5247.7163085938, 12.883934020996, 8504.96875))
 		elseif _G.SelectIsland == "Under Water Island" then
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
 		elseif _G.SelectIsland == "Fountain City" then
-		  Tween(CFrame.new(5127.1284179688, 59.501365661621, 4105.4458007813))
+		  TP2(CFrame.new(5127.1284179688, 59.501365661621, 4105.4458007813))
 		elseif _G.SelectIsland == "Shank Room" then
-		  Tween(CFrame.new(-1442.16553, 29.8788261, -28.3547478))
+		  TP2(CFrame.new(-1442.16553, 29.8788261, -28.3547478))
 		elseif _G.SelectIsland == "Mob Island" then
-		  Tween(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
+		  TP2(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
 		elseif _G.SelectIsland == "The Cafe" then
-		  Tween(CFrame.new(-380.47927856445, 77.220390319824, 255.82550048828))
+		  TP2(CFrame.new(-380.47927856445, 77.220390319824, 255.82550048828))
 		elseif _G.SelectIsland == "Frist Spot" then
-		  Tween(CFrame.new(-11.311455726624, 29.276733398438, 2771.5224609375))
+		  TP2(CFrame.new(-11.311455726624, 29.276733398438, 2771.5224609375))
 		elseif _G.SelectIsland == "Dark Area" then
-		  Tween(CFrame.new(3780.0302734375, 22.652164459229, -3498.5859375))
+		  TP2(CFrame.new(3780.0302734375, 22.652164459229, -3498.5859375))
 		elseif _G.SelectIsland == "Flamingo Mansion" then
-		  Tween(CFrame.new(-483.73370361328, 332.0383605957, 595.32708740234))
+		  TP2(CFrame.new(-483.73370361328, 332.0383605957, 595.32708740234))
 		elseif _G.SelectIsland == "Flamingo Room" then
-		  Tween(CFrame.new(2284.4140625, 15.152037620544, 875.72534179688))
+		  TP2(CFrame.new(2284.4140625, 15.152037620544, 875.72534179688))
 		elseif _G.SelectIsland == "Green Zone" then
-		  Tween(CFrame.new(-2448.5300292969, 73.016105651855, -3210.6306152344))
+		  TP2(CFrame.new(-2448.5300292969, 73.016105651855, -3210.6306152344))
 		elseif _G.SelectIsland == "Factory" then
 		  Tween(CFrame.new(424.12698364258, 211.16171264648, -427.54049682617))
 		elseif _G.SelectIsland == "Colossuim" then
@@ -2482,43 +2482,43 @@ local islandlist =  {"Mansion","Port Town","Great Tree","Castle On The Sea","Min
 		elseif _G.SelectIsland == "Zombie Island" then
 		  Tween(CFrame.new(-5622.033203125, 492.19604492188, -781.78552246094))
 		elseif _G.SelectIsland == "Two Snow Mountain" then
-		  Tween(CFrame.new(753.14288330078, 408.23559570313, -5274.6147460938))
+		  TP2(CFrame.new(753.14288330078, 408.23559570313, -5274.6147460938))
 		elseif _G.SelectIsland == "Punk Hazard" then
-		  Tween(CFrame.new(-6127.654296875, 15.951762199402, -5040.2861328125))
+TP2(CFrame.new(-6127.654296875, 15.951762199402, -5040.2861328125))
 		elseif _G.SelectIsland == "Cursed Ship" then
-		  Tween(CFrame.new(923.40197753906, 125.05712890625, 32885.875))
+		  TP2(CFrame.new(923.40197753906, 125.05712890625, 32885.875))
 		elseif _G.SelectIsland == "Ice Castle" then
-		  Tween(CFrame.new(6148.4116210938, 294.38687133789, -6741.1166992188))
+		  TP2(CFrame.new(6148.4116210938, 294.38687133789, -6741.1166992188))
 		elseif _G.SelectIsland == "Forgotten Island" then
-		  Tween(CFrame.new(-3032.7641601563, 317.89672851563, -10075.373046875))
+		  TP2(CFrame.new(-3032.7641601563, 317.89672851563, -10075.373046875))
 		elseif _G.SelectIsland == "Ussop Island" then
-		  Tween(CFrame.new(4816.8618164063, 8.4599885940552, 2863.8195800781))
+		  TP2(CFrame.new(4816.8618164063, 8.4599885940552, 2863.8195800781))
 		elseif _G.SelectIsland == "Mini Sky Island" then
-		  Tween(CFrame.new(-288.74060058594, 49326.31640625, -35248.59375))
+		  TP2(CFrame.new(-288.74060058594, 49326.31640625, -35248.59375))
 		elseif _G.SelectIsland == "Great Tree" then
-		  Tween(CFrame.new(2681.2736816406, 1682.8092041016, -7190.9853515625))
+		  TP2(CFrame.new(2681.2736816406, 1682.8092041016, -7190.9853515625))
 		elseif _G.SelectIsland == "Castle On The Sea" then
-		  Tween(CFrame.new(-5074.45556640625, 314.5155334472656, -2991.054443359375))
+		  TP2(CFrame.new(-5074.45556640625, 314.5155334472656, -2991.054443359375))
 		elseif _G.SelectIsland == "MiniSky" then
-		  Tween(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
+		  TP2(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
 		elseif _G.SelectIsland == "Port Town" then
-		  Tween(CFrame.new(-290.7376708984375, 6.729952812194824, 5343.5537109375))
+		  TP2(CFrame.new(-290.7376708984375, 6.729952812194824, 5343.5537109375))
 		elseif _G.SelectIsland == "Hydra Island" then
-		  Tween(CFrame.new(5228.8842773438, 604.23400878906, 345.0400390625))
+		  TP2(CFrame.new(5228.8842773438, 604.23400878906, 345.0400390625))
 		elseif _G.SelectIsland == "Floating Turtle" then
-		  Tween(CFrame.new(-13274.528320313, 531.82073974609, -7579.22265625))
+		  TP2(CFrame.new(-13274.528320313, 531.82073974609, -7579.22265625))
 		elseif _G.SelectIsland == "Mansion" then
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12471.169921875, 374.94024658203, -7551.677734375))
 		elseif _G.SelectIsland == "Haunted Castle" then
-		  Tween(CFrame.new(-9515.3720703125, 164.00624084473, 5786.0610351562))
+		  TP2(CFrame.new(-9515.3720703125, 164.00624084473, 5786.0610351562))
 		elseif _G.SelectIsland == "Ice Cream Island" then
-		  Tween(CFrame.new(-902.56817626953, 79.93204498291, -10988.84765625))
+		  TP2(CFrame.new(-902.56817626953, 79.93204498291, -10988.84765625))
 		elseif _G.SelectIsland == "Peanut Island" then
-		  Tween(CFrame.new(-2062.7475585938, 50.473892211914, -10232.568359375))
+		  TP2(CFrame.new(-2062.7475585938, 50.473892211914, -10232.568359375))
 		elseif _G.SelectIsland == "Cake Island" then
-		  Tween(CFrame.new(-1884.7747802734375, 19.327526092529297, -11666.8974609375))
+		  TP2(CFrame.new(-1884.7747802734375, 19.327526092529297, -11666.8974609375))
 		elseif _G.SelectIsland == "New Island" then
-		Tween(CFrame.new(231.742981, 25.3354111, -12199.0537, 0.998278677, -5.16006757e-08, 0.0586484075, 4.79685092e-08, 1, 6.33390442e-08, -0.0586484075, -6.04167383e-08, 0.998278677))
+		TP2(CFrame.new(231.742981, 25.3354111, -12199.0537, 0.998278677, -5.16006757e-08, 0.0586484075, 4.79685092e-08, 1, 6.33390442e-08, -0.0586484075, -6.04167383e-08, 0.998278677))
 		end
 		until not _G.TeleportIsland
 		end
@@ -3242,6 +3242,50 @@ for _,v in next, workspace.Boats.PirateBrigade:GetDescendants() do
 end
 end
 end)
+
+
+
+Mys4:Toggle("Tween To Mirage Island",false,function(value)
+  _G.Mirage = value
+StopTween(_G.Mirage)
+  end)
+
+spawn(function()
+        pcall(function()
+            while wait() do
+             if _G.Mirage then
+              if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,250,0))
+                else
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Notification"; -- the title (ofc)
+        Text = "Mirage not Found"; -- what the text says (ofc)
+        Duration = 3; -- how long the notification should in secounds
+        })
+                if _G.MirageHop then
+                wait(6)
+                Hop()
+                end          
+            end
+end
+end
+end)
+end)
+
+
+Mys4:Toggle("Tween To Blue Gear",false,function(value)
+  Tween(game:GetService("Workspace").Map.MysticIsland:FindFirstChildOfClass("MeshPart").CFrame)
+end)
+
+
+Mys4:Button("Remove Fog",function(qww)
+	game:GetService("Lighting").LightingLayers:Destroy()
+	game:GetService("Lighting").Sky:Destroy()
+end)
+
+
+
+
 
 function EquipAllWeapon()
 	pcall(function()
@@ -4638,6 +4682,532 @@ end)
             end
         end
     end)
+
+
+    Section3:Toggle('Auto Soul Guitar', false, function(soulguiutarf)
+        AutoSoulGuitar = soulguiutarf
+        CancelTween(AutoSoulGuitar)
+    end)
+    spawn(function()
+        while task.wait() do
+            pcall(function()
+                if AutoSoulGuitar then
+                    if GetWeaponInventory("Soul Guitar") == false then
+                        if (CFrame.new(-9681.458984375, 6.139880657196045, 6341.3720703125).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000 then
+                            if game:GetService("Workspace").NPCs:FindFirstChild("Skeleton Machine") then
+                                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("soulGuitarBuy",true)
+                            else
+                                if game:GetService("Workspace").Map["Haunted Castle"].Candle1.Transparency == 0 then
+                                    if game:GetService("Workspace").Map["Haunted Castle"].Placard1.Left.Part.Transparency == 0 then
+                                        Quest2 = true
+                                        repeat task.wait() 
+                                            Tween(CFrame.new(-8762.69140625, 176.84783935546875, 6171.3076171875)) 
+                                        until (CFrame.new(-8762.69140625, 176.84783935546875, 6171.3076171875).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not AutoSoulGuitar
+                                        wait(1)
+                                        fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"].Placard7.Left.ClickDetector)
+                                        wait(1)
+                                        fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"].Placard6.Left.ClickDetector)
+                                        wait(1)
+                                        fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"].Placard5.Left.ClickDetector)
+                                        wait(1)
+                                        fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"].Placard4.Right.ClickDetector)
+                                        wait(1)
+                                        fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"].Placard3.Left.ClickDetector)
+                                        wait(1)
+                                        fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"].Placard2.Right.ClickDetector)
+                                        wait(1)
+                                        fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"].Placard1.Right.ClickDetector)
+                                        wait(1)
+                                    elseif game:GetService("Workspace").Map["Haunted Castle"].Tablet.Segment1:FindFirstChild("ClickDetector") then
+                                        if game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part1:FindFirstChild("ClickDetector") then
+                                            Quest4 = true
+                                            repeat task.wait() 
+                                                Tween(CFrame.new(-9553.5986328125, 65.62338256835938, 6041.58837890625)) 
+                                            until (CFrame.new(-9553.5986328125, 65.62338256835938, 6041.58837890625).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not AutoSoulGuitar
+                                            wait(1)
+                                            Tween(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part3.CFrame)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part3.ClickDetector)
+                                            wait(1)
+                                            Tween(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part4.CFrame)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part4.ClickDetector)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part4.ClickDetector)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part4.ClickDetector)
+                                            wait(1)
+                                            Tween(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part6.CFrame)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part6.ClickDetector)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part6.ClickDetector)
+                                            wait(1)
+                                            Tween(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part8.CFrame)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part8.ClickDetector)
+                                            wait(1)
+                                            Tween(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part10.CFrame)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part10.ClickDetector)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part10.ClickDetector)
+                                            wait(1)
+                                            fireclickdetector(game:GetService("Workspace").Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model.Part10.ClickDetector)
+                                        else
+                                            Quest3 = true
+                                            --Not Work Yet
+                                        end
+                                    else
+                                        if game:GetService("Workspace").NPCs:FindFirstChild("Ghost") then
+                                            local args = {
+                                                [1] = "GuitarPuzzleProgress",
+                                                [2] = "Ghost"
+                                            }
+    
+                                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+                                        end
+                                        if game.Workspace.Enemies:FindFirstChild("Living Zombie [Lv. 2000]") then
+                                            for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                                                if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                                                    if v.Name == "Living Zombie [Lv. 2000]" then
+                                                        EquipTool(SelectWeapon)
+                                                        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                                        v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                                        v.HumanoidRootPart.Transparency = 1
+                                                        v.Humanoid.JumpPower = 0
+                                                        v.Humanoid.WalkSpeed = 0
+                                                        v.HumanoidRootPart.CanCollide = false
+                                                        --v.Humanoid:ChangeState(11)
+                                                        --v.Humanoid:ChangeState(14)
+                                                        FarmPos = v.HumanoidRootPart.CFrame
+                                                        MonFarm = v.Name
+                                                        Click()
+                                                    end
+                                                end
+                                            end
+                                        else
+                                            Tween(CFrame.new(-10160.787109375, 138.6616973876953, 5955.03076171875))
+                                        end
+                                    end
+                                else    
+                                    if string.find(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("gravestoneEvent",2), "Error") then
+                                        print("Go to Grave")
+                                        Tween(CFrame.new(-8653.2060546875, 140.98487854003906, 6160.033203125))
+                                    elseif string.find(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("gravestoneEvent",2), "Nothing") then
+                                        print("Wait Next Night")
+                                    else
+                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("gravestoneEvent",2,true)
+                                    end
+                                end
+                            end
+                        else
+                            Tween(CFrame.new(-9681.458984375, 6.139880657196045, 6341.3720703125))
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+	
+	
+	
+	Section3:Toggle('Auto Legendary Sword', false, function(autolegendsw)
+    AutoLegendarySword = autolegendsw
+end)
+spawn(function()
+    while task.wait() do
+        if AutoLegendarySword then
+            pcall(function()
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySworldDealer","1")
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySworldDealer","2")
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySworldDealer","2")
+            end)
+        end
+    end
+end)
+
+Section3:Toggle('Auto Enchancement Haki', false, function(autocolorhk)
+    AutoColorHaki = autocolorhk
+end)
+spawn(function()
+    while task.wait() do
+        if AutoColorHaki then
+            pcall(function()
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ColorsDealer","2")
+            end)
+        end
+    end
+end)
+
+
+
+    Section3:Toggle("Auto Factory (Sea2)", false, function(factoryfunc)
+        _G.Factory = factoryfunc
+        CancelTween(_G.Factory)
+    end)
+    spawn(function()
+        while wait() do
+            if _G.Factory then
+                if game.Workspace.Enemies:FindFirstChild("Core") then
+                    for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                        if v.Name == "Core" and v.Humanoid.Health > 0 then
+                            repeat wait(.1)
+                                repeat Tween(CFrame.new(448.46756, 199.356781, -441.389252))
+                                    wait()
+                                until not _G.Factory or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(448.46756, 199.356781, -441.389252)).Magnitude <= 10
+                                EquipTool(SelectWeapon)
+                                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                v.HumanoidRootPart.Transparency = 1
+                                v.Humanoid.JumpPower = 0
+                                v.Humanoid.WalkSpeed = 0
+                                v.HumanoidRootPart.CanCollide = false
+                                --v.Humanoid:ChangeState(11)
+                                --v.Humanoid:ChangeState(14)
+                                FarmPos = v.HumanoidRootPart.CFrame
+                                MonFarm = v.Name
+                                Click()
+                            until not v.Parent or v.Humanoid.Health <= 0  or _G.Factory == false
+                        end
+                    end
+                elseif game.ReplicatedStorage:FindFirstChild("Core") then
+                    repeat Tween(CFrame.new(448.46756, 199.356781, -441.389252))
+                        wait()
+                    until not _G.Factory or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(448.46756, 199.356781, -441.389252)).Magnitude <= 10
+                end
+            end
+        end
+    end)
+
+
+    Section3:Toggle("Auto Evo Race (Sea2)", false, function(evoracefunc)
+        CheckEvo = evoracefunc
+        CancelTween(CheckEvo)
+    end)
+    spawn(function()
+        while wait(.1) do
+            if AutoEvoRace then
+                if not game:GetService("Players").LocalPlayer.Data.Race:FindFirstChild("Evolved") then
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Alchemist","1") == 0 then
+                        Tween(CFrame.new(-2779.83521, 72.9661407, -3574.02002, -0.730484903, 6.39014104e-08, -0.68292886, 3.59963224e-08, 1, 5.50667032e-08, 0.68292886, 1.56424669e-08, -0.730484903))
+                        if (Vector3.new(-2779.83521, 72.9661407, -3574.02002) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 4 then
+                            wait(1.1)
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Alchemist","2")
+                        end
+                    elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Alchemist","1") == 1 then
+                        pcall(function()
+                            if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flower 1") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Flower 1") then
+                                Tween(game.Workspace.Flower1.CFrame)
+                            elseif not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flower 2") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Flower 2") then
+                                Tween(game.Workspace.Flower2.CFrame)
+                            elseif not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flower 3") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Flower 3") then
+                                if game:GetService("Workspace").Enemies:FindFirstChild("Zombie [Lv. 950]") then
+                                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                        if v.Name == "Zombie [Lv. 950]" then
+                                            repeat game:GetService("RunService").Heartbeat:wait()
+                                                EquipTool(SelectWeapon)
+                                                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                                v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                                v.HumanoidRootPart.Transparency = 1
+                                                v.Humanoid.JumpPower = 0
+                                                v.Humanoid.WalkSpeed = 0
+                                                v.HumanoidRootPart.CanCollide = false
+                                                --v.Humanoid:ChangeState(11)
+                                                --v.Humanoid:ChangeState(14)
+                                                FarmPos = v.HumanoidRootPart.CFrame
+                                                MonFarm = v.Name
+                                                Click()
+                                            until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flower 3") or not v.Parent or v.Humanoid.Health <= 0 or AutoEvoRace == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
+                                            
+                                        end
+                                    end
+                                else
+                                    
+                                    Tween(CFrame.new(-5854.39014, 145.093857, -686.942017, 0.379233211, -1.41975844e-08, -0.925301135, -3.77265719e-10, 1, -1.5498367e-08, 0.925301135, 6.2265797e-09, 0.379233211))
+                                end
+                            end
+                        end)
+                    elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Alchemist","1") == 2 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Alchemist","3")
+                    end
+                end
+            end
+        end
+    end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Section3:Toggle('Auto Tushita', AutoTushita, function(autotushitafunc)
+    AutoTushita = autotushitafunc
+    CancelTween(AutoTushita)
+end)
+spawn(function()
+    while task.wait(.1) do
+        if AutoTushita then
+            pcall(function()
+                autoTushita()
+            end)
+        end
+    end
+end)
+function enemyrip()
+    Tween(CFrame.new(-5332.30371, 423.985413, -2673.48218))
+    wait()
+    if game.Workspace.Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
+        local mobs = game.Workspace.Enemies:GetChildren()
+        for i,v in pairs(mobs) do
+            if v.Name == "rip_indra True Form [Lv. 5000] [Raid Boss]" and v:IsA("Model") and v:FindFirstChild("Humanoid") and
+                v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                return v
+            end
+        end
+    end
+    return game.ReplicatedStorage:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]")
+end
+function enemyEliteBoss()
+    if game.Workspace.Enemies:FindFirstChild("Deandre [Lv. 1750]") or game.Workspace.Enemies:FindFirstChild("Urban [Lv. 1750]") or game.Workspace.Enemies:FindFirstChild("Diablo [Lv. 1750]") then
+        local mobs = game.Workspace.Enemies:GetChildren()
+        for i,v in pairs(mobs) do
+            if v.Name == "Deandre [Lv. 1750]" or v.Name == "Diablo [Lv. 1750]" or v.Name == "Urban [Lv. 1750]"  and v:IsA("Model") and v:FindFirstChild("Humanoid") and
+                v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                return v
+            end
+        end
+    end
+    return game.ReplicatedStorage:FindFirstChild("Deandre [Lv. 1750]") or game.ReplicatedStorage:FindFirstChild("Urban [Lv. 1750]") or game.ReplicatedStorage:FindFirstChild("Diablo [Lv. 1750]")
+end
+function enemylongma()
+    Tween(CFrame.new(-10171.7051, 406.981995, -9552.31738))
+    if game.Workspace.Enemies:FindFirstChild("Longma [Lv. 2000] [Boss]") then
+        local mobs = game.Workspace.Enemies:GetChildren()
+        for i,v in pairs(mobs) do
+            if v.Name == "Longma [Lv. 2000] [Boss]" and v:IsA("Model") and v:FindFirstChild("Humanoid") and
+                v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                return v
+            end
+        end
+    end
+    return game.ReplicatedStorage:FindFirstChild("Longma [Lv. 2000] [Boss]")
+end
+function autoTushita()
+    if not game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") and not game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") then
+        if game.Workspace.Enemies:FindFirstChild("Deandre [Lv. 1750]") or game.Workspace.Enemies:FindFirstChild("Urban [Lv. 1750]") or game.Workspace.Enemies:FindFirstChild("Diablo [Lv. 1750]") or game.ReplicatedStorage:FindFirstChild("Deandre [Lv. 1750]") or game.ReplicatedStorage:FindFirstChild("Urban [Lv. 1750]") or game.ReplicatedStorage:FindFirstChild("Diablo [Lv. 1750]") then
+            if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                repeat Tween(CFrame.new(5420.49219, 314.446045, -2823.07373)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+                wait(1)
+                repeat Tween(CFrame.new(5420.49219, 314.446045, -2823.07373)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+                wait(1.1)
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
+                wait(1)
+            elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                CheckLevel()
+                pcall(function()
+                    EquipTool(SelectWeapon)
+                    pcall(function()
+                        local v = enemyEliteBoss()
+                        v.HumanoidRootPart.CanCollide = false
+                        v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
+                        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                        Click()
+                    end)
+                end)
+            end
+        else
+            Tween(CFrame.new(-12554.9443, 337.194092, -7501.44727))
+        end
+    elseif game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") then
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("activateColor","Winter Sky")
+        wait(0.5)
+        repeat Tween(CFrame.new(-5420.16602, 1084.9657, -2666.8208)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-5420.16602, 1084.9657, -2666.8208)).Magnitude <= 10
+        wait(0.5)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("activateColor","Pure Red")
+        wait(0.5)
+        repeat Tween(CFrame.new(-5414.41357, 309.865753, -2212.45776)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-5414.41357, 309.865753, -2212.45776)).Magnitude <= 10
+        wait(0.5)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("activateColor","Snow White")
+        wait(0.5)
+        repeat Tween(CFrame.new(-4971.47559, 331.565765, -3720.02954)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-4971.47559, 331.565765, -3720.02954)).Magnitude <= 10
+        wait(0.5)
+        EquipTool("God's Chalice")
+        wait(0.5)
+        repeat Tween(CFrame.new(-5560.27295, 313.915466, -2663.89795)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-5560.27295, 313.915466, -2663.89795)).Magnitude <= 10
+        wait(0.5)
+        repeat Tween(CFrame.new(-5561.37451, 313.342529, -2663.4948)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+        wait(1)
+        repeat Tween(CFrame.new(5154.17676, 141.786423, 911.046326)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+        wait(0.2)
+        repeat Tween(CFrame.new(5148.03613, 162.352493, 910.548218)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+        wait(1)
+        EquipTool("Holy Torch")
+        wait(1)
+        wait(0.4)
+        repeat Tween(CFrame.new(-10752.7695, 412.229523, -9366.36328)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+        wait(0.4)
+        repeat Tween(CFrame.new(-11673.4111, 331.749023, -9474.34668)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+        wait(0.4)
+        repeat Tween(CFrame.new(-12133.3389, 519.47522, -10653.1904)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+        wait(0.4)
+        repeat Tween(CFrame.new(-13336.5, 485.280396, -6983.35254)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+        wait(0.4)
+        repeat Tween(CFrame.new(-13487.4131, 334.84845, -7926.34863)) wait() until not AutoTushita or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(5420.49219, 314.446045, -2823.07373)).Magnitude <= 10
+        wait(1)
+    elseif game.Workspace.Enemies:FindFirstChild("Longma [Lv. 2000] [Boss]") or game.ReplicatedStorage:FindFirstChild("Longma [Lv. 2000] [Boss]") then
+        pcall(function()
+            EquipTool(SelectWeapon)
+            pcall(function()
+                local v = enemylongma()
+                v.HumanoidRootPart.CanCollide = false
+                v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
+                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                Click()
+            end)
+        end)
+    elseif game.Workspace.Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]")  or game.ReplicatedStorage:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
+        pcall(function()
+            EquipTool(SelectWeapon)
+            pcall(function()
+                local v = enemyrip()
+                v.HumanoidRootPart.CanCollide = false
+                v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
+                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                Click()
+            end)
+        end)
+    else
+        Tween(CFrame.new(-12554.9443, 337.194092, -7501.44727))
+    end
+end
+
+
+
+Section3:Toggle('Auto Yama' , AutoYama, function(autoyamafunc)
+    AutoYama = autoyamafunc
+    CancelTween(AutoYama)
+end)
+    
+spawn(function()
+    while task.wait() do
+        if AutoYama then
+            if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress") >= 30 then
+                repeat task.wait()
+                    fireclickdetector(game:GetService("Workspace").Map.Waterfall.SealedKatana.Handle.ClickDetector)
+                until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Yama") or not AutoYama
+            end
+        end
+    end
+end)
+
+Section3:Toggle('Auto Hallow Sycthe', AutoHallowSycthe, function(autohallowsycthefunc)
+    AutoHallowSycthe = autohallowsycthefunc
+    CancelTween(AutoHallowSycthe)
+end)
+
+spawn(function()
+    while task.wait() do
+        if AutoHallowSycthe then
+            pcall(function()
+                if game:GetService("Workspace").Enemies:FindFirstChild("Soul Reaper [Lv. 2100] [Raid Boss]") then
+                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                        if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                            if v.Name == "Soul Reaper [Lv. 2100] [Raid Boss]" then
+                                repeat task.wait()
+                                    EquipTool(SelectWeapon)
+                                    Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                    v.HumanoidRootPart.Transparency = 1
+                                    v.Humanoid.JumpPower = 0
+                                    v.Humanoid.WalkSpeed = 0
+                                    v.HumanoidRootPart.CanCollide = false
+                                    --v.Humanoid:ChangeState(11)
+                                    --v.Humanoid:ChangeState(14)
+                                    FarmPos = v.HumanoidRootPart.CFrame
+                                    MonFarm = v.Name
+                                    game:GetService'VirtualUser':CaptureController()
+                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672),workspace.CurrentCamera.CFrame)
+                                until v.Humanoid.Health <= 0 or not AutoHallowSycthe
+                            end
+                        end
+                    end
+                else
+                    loc3 = CFrame.new(-8932.322265625, 146.83154296875, 6062.55078125)
+                    loc4 = game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper [Lv. 2100] [Raid Boss]").HumanoidRootPart.CFrame
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Hallow Essence") then
+                        repeat task.wait()
+                            Tween(loc3)
+                            wait()
+                        until (loc3.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8
+                        EquipTool("Hallow Essence")
+                    else
+                        Tween(loc4)
+                    end
+                end
+            end)
+        end
+    end
+end)
+
+
+
+
+
+
+    Section3:Toggle("Auto Farm Ectoplasm (Sea2)", false, function(ectofunc)
+        AutoEcto = ectofunc
+        CancelTween(AutoEcto)
+    end)
+    spawn(function()
+        while wait(.1) do
+            pcall(function()
+                if AutoEcto then
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Ship Deckhand [Lv. 1250]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Engineer [Lv. 1275]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Steward [Lv. 1300]") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Officer [Lv. 1325]") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "Ship Steward [Lv. 1300]" or v.Name == "Ship Engineer [Lv. 1275]" or v.Name == "Ship Deckhand [Lv. 1250]" or v.Name == "Ship Officer [Lv. 1325]" and v:FindFirstChild("Humanoid") then
+                                if v.Humanoid.Health > 0 then
+                                    repeat game:GetService("RunService").Heartbeat:wait()
+                                        EquipTool(SelectWeapon)
+                                        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                        v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                        v.HumanoidRootPart.Transparency = 1
+                                        v.Humanoid.JumpPower = 0
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.CanCollide = false
+                                        --v.Humanoid:ChangeState(11)
+                                        --v.Humanoid:ChangeState(14)
+                                        FarmPos = v.HumanoidRootPart.CFrame
+                                        MonFarm = v.Name
+                                        Click()
+                                    until AutoEcto == false or not v.Parent or v.Humanoid.Health == 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
+                                end
+                            end
+                        end
+                    else
+                        local Distance = (Vector3.new(904.4072265625, 181.05767822266, 33341.38671875) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                        if Distance > 20000 then
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
+                        end
+                        Tween(CFrame.new(904.4072265625, 181.05767822266, 33341.38671875))
+                    end
+                end
+            end)
+        end
+    end)
+
+
+
+
 
 
 
