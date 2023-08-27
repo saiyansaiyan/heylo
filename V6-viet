@@ -1,10 +1,10 @@
 local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
 LibraryNotify.DefaultColor = Color3.fromRGB(0, 60, 255)
-LibraryNotify:Notification({ Text = "Loading...", Duration = 8 })
+LibraryNotify:Notification({ Text = "Đang Tải...", Duration = 8 })
 wait(0.1)
 local LibraryNotify = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/luable/main/notify.lua"))()
 LibraryNotify.DefaultColor = Color3.fromRGB(0, 60, 255)
-LibraryNotify:Notification({ Text = "Done !", Duration = 5 })
+LibraryNotify:Notification({ Text = "Thành Công !", Duration = 5 })
 local LocalHttp = ""
 _G.Color = Color3.fromRGB(0, 60, 255)
 local library = {}
@@ -2763,7 +2763,7 @@ Mys2:Button("Di Chuyển Đến Cần Gạt",function()
   Tween(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
 end)
 
-Mys2:Button("Teleport To Acient One",function()
+Mys2:Button("Di Chuyen Den Acient One",function()
   Tween(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
 end)
 
