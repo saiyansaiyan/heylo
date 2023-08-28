@@ -3361,7 +3361,7 @@ Section4:Toggle("Auto Farm Bone",AutoFarmBone, function(bonefarn)
               BTP(boneframe)
               wait(3)
               elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - boneframe.Position).Magnitude < 2000 then
-              Tween(boneframe)
+              getgenv().ToTargets(boneframe)
               end
               else
                 Tween(boneframe)
@@ -3372,7 +3372,7 @@ Section4:Toggle("Auto Farm Bone",AutoFarmBone, function(bonefarn)
               if v.Name == "Reborn Skeleton [Lv. 1975]" or v.Name == "Living Zombie [Lv. 2000]" or v.Name == "Demonic Soul [Lv. 2025]" or v.Name == "Posessed Mummy [Lv. 2050]" then
               repeat game:GetService("RunService").Heartbeat:wait()
               EquipTool(SelectWeapon)
-              Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+              getgenv().ToTargets(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
               v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
               v.HumanoidRootPart.Transparency = 1
               v.Humanoid.JumpPower = 0
@@ -3392,13 +3392,13 @@ Section4:Toggle("Auto Farm Bone",AutoFarmBone, function(bonefarn)
               end
               for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
               if v.Name == "Reborn Skeleton [Lv. 1975]" then
-              Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+              getgenv().ToTargets(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
               elseif v.Name == "Living Zombie [Lv. 2000]" then
-              Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+              getgenv().ToTargets(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
               elseif v.Name == "Demonic Soul [Lv. 2025]" then
-              Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+              getgenv().ToTargets(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
               elseif v.Name == "Posessed Mummy [Lv. 2050]" then
-              Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+              getgenv().ToTargets(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
               end
               end
               end)
@@ -8033,6 +8033,347 @@ Section:Toggle("Auto Farm Level",AutoFarmQuest,function(value)
 	  end
 	  end
 	end)
+	
+	
+	getgenv().ToTargets = function(p)
+    task.spawn(function()
+        pcall(function()
+            if game:GetService("Players").LocalPlayer:DistanceFromCharacter(p.Position) <= 300 then 
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = p
+            elseif not game.Players.LocalPlayer.Character:FindFirstChild("Root")then 
+                local K = Instance.new("Part",game.Players.LocalPlayer.Character)
+                K.Size = Vector3.new(1,0.5,1)
+                K.Name = "Root"
+                K.Anchored = true
+                K.Transparency = 1
+                K.CanCollide = false
+                K.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,20,0)
+            end
+            local U = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-p.Position).Magnitude
+            local z = game:service("TweenService")
+            local B = TweenInfo.new((p.Position-game.Players.LocalPlayer.Character.Root.Position).Magnitude/300,Enum.EasingStyle.Linear)
+            local S,g = pcall(function()
+            local q = z:Create(game.Players.LocalPlayer.Character.Root,B,{CFrame = p})
+            q:Play()
+        end)
+        if not S then 
+            return g
+        end
+        game.Players.LocalPlayer.Character.Root.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            if S and game.Players.LocalPlayer.Character:FindFirstChild("Root") then 
+                pcall(function()
+                    if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-p.Position).Magnitude >= 50 then 
+                        spawn(function()
+                            pcall(function()
+                                if (game.Players.LocalPlayer.Character.Root.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 200 then 
+                                    game.Players.LocalPlayer.Character.Root.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                                else 
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=game.Players.LocalPlayer.Character.Root.CFrame
+                                end
+                            end)
+                        end)
+                    elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-p.Position).Magnitude >= 25 and(game.Players.LocalPlayer.Character.HumanoidRootPart.Position-p.Position).Magnitude < 40 then 
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
+                    elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-p.Position).Magnitude < 25 then 
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
+                    end
+                end)
+            end
+	    end)
+    end)
+end
+local TweenService = game:GetService("TweenService")
+local LocalPlayer = game.Players.LocalPlayer
+local HRP = LocalPlayer.Character.HumanoidRootPart
+function get_dis(pos)
+    return (HRP.Position-pos).Magnitude
+end
+function tween_to(pos)
+    pcall(function()
+        local dis = get_dis(pos)
+        local T
+        if dis < 440 then
+            T = dis/440
+        elseif dis < 750 then
+            T = dis/370
+        else
+            T = dis/350
+        end
+        local T_info = TweenInfo.new(T,Enum.EasingStyle.Linear)
+        local TW = TweenService:Create(HRP, T_info, { CFrame = CFrame.new(pos) })
+        TW:Play()
+        TW.Completed:wait()
+    end)
+end    
+
+local data_chest = {}
+for _,v in pairs(game.workspace:GetDescendants()) do
+    if v.Name == "Chest3" then
+        table.insert(data_chest, v)
+    end
+end
+for _,v in pairs(game.workspace:GetDescendants()) do
+    if v.Name == "Chest2" then
+        table.insert(data_chest, v)
+    end
+end
+for _,v in pairs(game.workspace:GetDescendants()) do
+    if v.Name == "Chest1" then
+        table.insert(data_chest, v)
+    end
+end
+function main()
+    while #data_chest > 0 and _G.LtwChest and not LocalPlayer.Backpack:FindFirstChild("Fist of Darkness")and not LocalPlayer.Backpack:FindFirstChild("God's Chalice") do                      
+        task.wait()
+        local closest_chest = data_chest[1]
+        local found = false
+        for i,v in pairs(data_chest) do
+            -- > First
+            if table.find(data_chest, "Chest3") then
+                if v.Name ~= "Chest3" then
+                    continue
+                else
+                    if closest_chest.Name ~= "Chest3" then
+                        closest_chest = v
+                    end
+                end
+            end
+            -- > Second
+            if table.find(data_chest, "Chest2") then
+                if v.Name ~= "Chest2" then
+                    continue
+                else
+                    if closest_chest.Name ~= "Chest2" then
+                        closest_chest = v
+                    end
+                end
+            end
+            
+            
+            if not _G.LtwChest then
+                break
+            end
+            if v.Parent == nil then
+            	continue
+            end
+            
+            local dis = get_dis(v.Position)
+            if dis <= 300 then
+                table.remove(data_chest, i)
+                tween_to(v.Position)
+                
+                local T = tick()
+                repeat wait() until closest_chest.Parent == nil or tick() - T >= 1
+                found = true
+                break
+            end
+            if dis < get_dis(closest_chest.Position) then
+                closest_chest = v
+            end
+        end
+        if not found then
+            local i = table.find(data_chest, closest_chest)
+            table.remove(data_chest, i)
+            tween_to(closest_chest.Position)
+            
+            local T = tick()
+            repeat wait() until closest_chest.Parent == nil or tick() - T >= 1
+        end
+    end
+end
+function Hop()
+	local PlaceID = game.PlaceId
+	local AllIDs = {}
+	local foundAnything = ""
+	local actualHour = os.date("!*t").hour
+	local Deleted = false
+	function TPReturner()
+		local Site;
+		if foundAnything == "" then
+			Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+		else
+			Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+		end
+		local ID = ""
+		if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+			foundAnything = Site.nextPageCursor
+		end
+		local num = 0;
+		for i,v in pairs(Site.data) do
+			local Possible = true
+			ID = tostring(v.id)
+			if tonumber(v.maxPlayers) > tonumber(v.playing) then
+				for _,Existing in pairs(AllIDs) do
+					if num ~= 0 then
+						if ID == tostring(Existing) then
+							Possible = false
+						end
+					else
+						if tonumber(actualHour) ~= tonumber(Existing) then
+							local delFile = pcall(function()
+								AllIDs = {}
+								table.insert(AllIDs, actualHour)
+							end)
+						end
+					end
+					num = num + 1
+				end
+				if Possible == true then
+					table.insert(AllIDs, ID)
+					wait()
+					pcall(function()
+						wait()
+						game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+					end)
+					wait(4)
+				end
+			end
+		end
+	end
+	function Teleport() 
+		while wait() do
+			pcall(function()
+				TPReturner()
+				if foundAnything ~= "" then
+					TPReturner()
+				end
+			end)
+		end
+	end
+	Teleport()
+end
+function Attack()
+    pcall(function()
+        wait()
+        game:GetService'VirtualUser':CaptureController()
+        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+    end)
+end
+function toTarget(targetPos, targetCFrame)
+    local tweenfunc = {}
+    local tween_s = game:service"TweenService"
+    local info = TweenInfo.new((targetPos - game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude/300, Enum.EasingStyle.Linear)
+    local tween = tween_s:Create(game:GetService("Players").LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = targetCFrame * CFrame.fromAxisAngle(Vector3.new(1,0,0), math.rad(0))})
+    tween:Play()
+    function tweenfunc:Stop()
+        tween:Cancel()
+        return tween
+    end
+    if not tween then return tween end
+    return tweenfunc
+end
+
+	
+	spawn(function()
+    pcall(function()
+        while wait() do
+            for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                if v.ToolTip == tostring(_G.Weapon) then
+                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                end
+            end
+        end
+    end)
+end)
+spawn(function()
+    while wait() do
+        if _G.DecreaseMoney then
+            pcall(function()
+				local args = {
+					[1] = "BuyBoat",
+					[2] = "PirateBasic"
+				}
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            end)
+        end
+    end
+end)
+local Module = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework)
+local CombatFramework = debug.getupvalues(Module)[2]
+local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
+spawn(function()
+while task.wait() do
+	if _G.AutoFarmL or _G.NChest or _G.AFdf or _G.Auto_Cake_Prince or _G.Auto_Elite_Hunter or _G.Auto_Farm_Bone  or _G.AutoFarmBone or _G.AuToFarmMasFruits or _G.Sea2 or _G.Auto_Rengoku or _G.Auto_Next_Island or _G.Auto_Farm_Boss or _G.Auto_Saber then
+    pcall(function()
+        CamShake:Stop()
+        CombatFramework.activeController.hitSound = 0
+        CombatFramework.activeController.attacking = false
+        CombatFramework.activeController.timeToNextAttack = 0
+        CombatFramework.activeController.increment = 3
+        CombatFramework.activeController.hitboxMagnitude = 1000
+        CombatFramework.activeController.blocking = false
+        CombatFramework.activeController.timeToNextBlock = 0
+        CombatFramework.activeController.focusStart = 0
+    end)
+    end
+    task.wait()
+end
+end)
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            if _G.AutoFarmL or _G.NChest or _G.SaveModeSS or _G.AFdf or _G.Auto_Cake_Prince or _G.Auto_Elite_Hunter or _G.Auto_Farm_Bone or _G.Auto_Farm_All_Boss or _G.AutoFarmBone or _G.Auto_Third_World or _G.AuToFarmMasFruits or _G.Sea2 or _G.Start_Tween_Island or _G.Auto_Rengoku or _G.Auto_Next_Island or _G.Auto_Farm_Boss or _G.Auto_Saber or _G.Auto_Fully_SharkMan_Karate then
+                if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
+                    local Noclip = Instance.new("BodyVelocity")
+                    Noclip.Name = "BodyClip"
+                    Noclip.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                    Noclip.MaxForce = Vector3.new(100000,100000,100000)
+                    Noclip.Velocity = Vector3.new(0,0,0)
+                end
+            else
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
+            end
+        end)
+    end
+end)
+spawn(function()
+    pcall(function()
+        game:GetService("RunService").Stepped:Connect(function()
+            if _G.AutoFarmL or _G.NChest or _G.SaveModeSS or _G.LOf or _G.AFdf or _G.Auto_Cake_Prince or _G.Auto_Elite_Hunter or _G.Auto_Farm_Bone  or _G.Auto_Farm_All_Boss or _G.AutoFarmBone or _G.AuToFarmMasFruits or _G.Sea2 or _G.Start_Tween_Island or _G.Auto_Rengoku or _G.NoClip or _G.Auto_Farm_Boss or _G.Auto_Saber then
+                for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                    if v:IsA("BasePart") then
+                        v.CanCollide = false    
+                    end
+                end
+            end
+        end)
+    end)
+end)
+
+	
+	
+	
+	
+	
+	Section:Toggle("Auto Chest",false,function(value)
+			_G.LtwChest = value
+			_G.NChest = value
+			main()
+		end)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
  
     
