@@ -2928,7 +2928,7 @@ Mys1:Toggle("Kill Sea Beast(No Spawn Boat)",_G.Auto_Seabest,function(value)
                       if not game:GetService("Workspace").Enemies:FindFirstChild("PirateBrigade") then 
                           if not game:GetService("Workspace").Enemies:FindFirstChild("PirateBasic") then
                               if not game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
-                                  buyb = topos(CFrame.new(-11.78054428100586, 10.302456855773926, 2927.2255859375))
+                                  buyb = Tween(CFrame.new(-11.78054428100586, 10.302456855773926, 2927.2255859375))
                                   if (CFrame.new(-11.78054428100586, 10.302456855773926, 2927.2255859375).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                       if buyb then buyb:Stop() end
                                       local args = {
@@ -2940,11 +2940,11 @@ Mys1:Toggle("Kill Sea Beast(No Spawn Boat)",_G.Auto_Seabest,function(value)
                                   end
                               elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
                                   if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
-                                      two(game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
+                                      Tween(game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
                                   elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == true then
                                       repeat wait()
                                           if (game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
-                                              two(CFrame.new(35.04552459716797, 17.750778198242188, 4819.267578125))
+                                              Tween(CFrame.new(35.04552459716797, 17.750778198242188, 4819.267578125))
                                           end
                                       until game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") or _G.Auto_Seabest == false
                                   end
@@ -2955,7 +2955,7 @@ Mys1:Toggle("Kill Sea Beast(No Spawn Boat)",_G.Auto_Seabest,function(value)
                                       if v:FindFirstChild("VehicleSeat") then
                                           repeat wait()
                                               game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
-                                              two(vs.VehicleSeat.CFrame * CFrame.new(0,30,0))
+                                              Tween(vs.VehicleSeat.CFrame * CFrame.new(0,30,0))
                                               EquipAllWeapon()  
                                               AutoSkill = true
                                               AimBotSkillPosition = vs.VehicleSeat
@@ -2973,7 +2973,7 @@ Mys1:Toggle("Kill Sea Beast(No Spawn Boat)",_G.Auto_Seabest,function(value)
                                   if v:FindFirstChild("VehicleSeat") then
                                       repeat wait()
                                           game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
-                                          two(vss.VehicleSeat.CFrame * CFrame.new(0,30,0))
+                                          Tween(vss.VehicleSeat.CFrame * CFrame.new(0,30,0))
                                           EquipAllWeapon()  
                                           AutoSkill = true
                                           AimBotSkillPosition = vss.VehicleSeat
@@ -2990,7 +2990,7 @@ Mys1:Toggle("Kill Sea Beast(No Spawn Boat)",_G.Auto_Seabest,function(value)
                           if v:FindFirstChild("HumanoidRootPart") then
                               repeat wait()
                                   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
-                                  two(v.HumanoidRootPart.CFrame * CFrame.new(0,500,0))
+                                  Tween(v.HumanoidRootPart.CFrame * CFrame.new(0,500,0))
                                   EquipAllWeapon()  
                                   AutoSkill = true
                                   AimBotSkillPosition = v.HumanoidRootPart
@@ -3128,11 +3128,11 @@ Mys:Toggle("Auto Trial Fish",_G.Auto_Seabest,function(value)
                                   end
                               elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
                                   if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
-                                      two(game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
+                                      Tween(game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
                                   elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == true then
                                       repeat wait()
                                           if (game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
-                                              two(CFrame.new(35.04552459716797, 17.750778198242188, 4819.267578125))
+                                              Tween(CFrame.new(35.04552459716797, 17.750778198242188, 4819.267578125))
                                           end
                                       until game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") or _G.Auto_Seabest == false
                                   end
@@ -3143,7 +3143,7 @@ Mys:Toggle("Auto Trial Fish",_G.Auto_Seabest,function(value)
                                       if v:FindFirstChild("VehicleSeat") then
                                           repeat wait()
                                               game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
-                                              two(vs.VehicleSeat.CFrame * CFrame.new(0,30,0))
+                                              Tween(vs.VehicleSeat.CFrame * CFrame.new(0,30,0))
                                               EquipAllWeapon()  
                                               AutoSkill = true
                                               AimBotSkillPosition = vs.VehicleSeat
@@ -3161,7 +3161,7 @@ Mys:Toggle("Auto Trial Fish",_G.Auto_Seabest,function(value)
                                   if v:FindFirstChild("VehicleSeat") then
                                       repeat wait()
                                           game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
-                                          two(vss.VehicleSeat.CFrame * CFrame.new(0,30,0))
+                                          Tween(vss.VehicleSeat.CFrame * CFrame.new(0,30,0))
                                           EquipAllWeapon()  
                                           AutoSkill = true
                                           AimBotSkillPosition = vss.VehicleSeat
@@ -3178,7 +3178,7 @@ Mys:Toggle("Auto Trial Fish",_G.Auto_Seabest,function(value)
                           if v:FindFirstChild("HumanoidRootPart") then
                               repeat wait()
                                   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
-                                  two(v.HumanoidRootPart.CFrame * CFrame.new(0,500,0))
+                                  Tween(v.HumanoidRootPart.CFrame * CFrame.new(0,500,0))
                                   EquipAllWeapon()  
                                   AutoSkill = true
                                   AimBotSkillPosition = v.HumanoidRootPart
