@@ -3548,42 +3548,41 @@ local boss = Tabs.Main:AddSection("Boss Farm")
 
       local ToggleEspKitsune = Tabs.Main:AddToggle("ToggleEspKitsune", {Title = "Esp Kitsune Island", Default = false })
       ToggleEspKitsune:OnChanged(function(Value)
-        KitsuneEsp = Value
-        while IslandESP do wait()
-            UpdateKitsune() 
+        KitsuneIslandEsp = value
+        while KitsuneIslandEsp do wait()
+            UpdateIslandKisuneESP() 
         end
     end)
       Options.ToggleEspKitsune:SetValue(false)
 
-      function UpdateKitsune()
-        for i, v in pairs(game:GetService("Workspace").Map.KitsuneIsalnd.ShrineActive:GetChildren()) do
+      function UpdateIslandKisuneESP() 
+        for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].Locations:GetChildren()) do
             pcall(function()
-                if KitsuneEsp then
-                    if v.Name ~= "NeonShrinePart" then
-                        if not v:FindFirstChild('IslandESP') then
-                            local bill = Instance.new('BillboardGui', v)
-                            bill.Name = 'IslandESP'
+                if KitsuneIslandEsp then 
+                    if v.Name == "Kitsune Island" then
+                        if not v:FindFirstChild('NameEsp') then
+                            local bill = Instance.new('BillboardGui',v)
+                            bill.Name = 'NameEsp'
                             bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                            bill.Size = UDim2.new(1, 200, 1, 30)
+                            bill.Size = UDim2.new(1,200,1,30)
                             bill.Adornee = v
                             bill.AlwaysOnTop = true
-                            local name = Instance.new('TextLabel', bill)
+                            local name = Instance.new('TextLabel',bill)
                             name.Font = "Code"
                             name.FontSize = "Size14"
                             name.TextWrapped = true
-                            name.Size = UDim2.new(1, 0, 1, 0)
+                            name.Size = UDim2.new(1,0,1,0)
                             name.TextYAlignment = 'Top'
                             name.BackgroundTransparency = 1
                             name.TextStrokeTransparency = 0.5
                             name.TextColor3 = Color3.fromRGB(80, 245, 245)
-                            name.Text = "Kitsune Island"
                         else
-                            v['IslandESP'].TextLabel.Text = "Kitsune Island"
+                            v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
                         end
                     end
                 else
-                    if v:FindFirstChild('IslandESP') then
-                        v:FindFirstChild('IslandESP'):Destroy()
+                    if v:FindFirstChild('NameEsp') then
+                        v:FindFirstChild('NameEsp'):Destroy()
                     end
                 end
             end)
