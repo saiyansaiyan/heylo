@@ -3548,7 +3548,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
 
       local ToggleEspKitsune = Tabs.Main:AddToggle("ToggleEspKitsune", {Title = "Esp Kitsune Island", Default = false })
       ToggleEspKitsune:OnChanged(function(Value)
-        KitsuneIslandEsp = value
+        KitsuneIslandEsp = Value
         while KitsuneIslandEsp do wait()
             UpdateIslandKisuneESP() 
         end
