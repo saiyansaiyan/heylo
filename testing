@@ -2580,6 +2580,11 @@ end)
     local ToggleLevel = Tabs.Main:AddToggle("ToggleLevel", {Title = "Auto Level", Default = false })
     ToggleLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
+        if Value == false then
+            wait()
+            Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+            wait()
+        end
     end)
     Options.ToggleLevel:SetValue(false)
     spawn(function()
@@ -2643,6 +2648,11 @@ end)
         local ToggleCandy = Tabs.Main:AddToggle("ToggleCandy", {Title = "Auto Farm Candy ( Only Max Level )", Default = false })
         ToggleCandy:OnChanged(function(Value)
            _G.AutoCandy = Value
+           if Value == false then
+            wait()
+            Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+            wait()
+        end
         end)
         Options.ToggleCandy:SetValue(false)
 
@@ -2686,6 +2696,11 @@ end)
     local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Kill Near | Mob Aura", Default = false })
     ToggleMobAura:OnChanged(function(Value)
         _G.AutoNear = Value
+        if Value == false then
+            wait()
+            Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+            wait()
+        end
     end)
     Options.ToggleMobAura:SetValue(false)
     spawn(function()
@@ -3161,6 +3176,11 @@ if Third_Sea then
 local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {Title = "Auto Bone", Default = false })
 ToggleBone:OnChanged(function(Value)
     _G.AutoBone = Value
+    if Value == false then
+        wait()
+        Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+        wait()
+    end
 end)
 Options.ToggleBone:SetValue(false)
 local BoneCFrame = CFrame.new(-9515.75, 174.8521728515625, 6079.40625)
@@ -3224,6 +3244,11 @@ end)
 local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Cake Prince", Default = false })
 ToggleCake:OnChanged(function(Value)
  _G.CakePrince = Value
+ if Value == false then
+    wait()
+    Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+    wait()
+end
 end)
 Options.ToggleCake:SetValue(false)
 spawn(function()
@@ -3487,6 +3512,11 @@ local boss = Tabs.Main:AddSection("Boss Farm")
 
     ToggleMaterial:OnChanged(function(Value)
         _G.AutoMaterial = Value
+        if Value == false then
+            wait()
+            Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+            wait()
+        end
     end)
     Options.ToggleMaterial:SetValue(false)
     spawn(function()
@@ -4940,6 +4970,11 @@ end)
 local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport To Player", Default = false })
 ToggleTeleport:OnChanged(function(Value)
     _G.TeleportPly = Value
+    if Value == false then
+        wait()
+        toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+        wait()
+    end
     pcall(function()
         if _G.TeleportPly then
             repeat toTarget(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
@@ -4947,6 +4982,11 @@ ToggleTeleport:OnChanged(function(Value)
     end)
 end)
 Options.ToggleTeleport:SetValue(false)
+
+
+
+
+
 
 
 local ToggleQuanSat = Tabs.Player:AddToggle("ToggleQuanSat", {Title = "Spectate Player", Default = false })
@@ -5335,9 +5375,14 @@ DropdownIsland:OnChanged(function(Value)
 end)
 
 
-local ToggleIsland = Tabs.Teleport:AddToggle("ToggleIsland", {Title = "Teleport", Default = false })
+local ToggleIsland = Tabs.Teleport:AddToggle("ToggleIsland", {Title = "Teleport to Island", Default = false })
 ToggleIsland:OnChanged(function(Value)
     _G.TeleportIsland = Value
+    if Value == false then
+        wait()
+        toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+        wait()
+    end
     if _G.TeleportIsland == true then
         repeat wait()
             if _G.SelectIsland == "WindMill" then
