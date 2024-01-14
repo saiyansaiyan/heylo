@@ -2290,9 +2290,8 @@ return 0
 end
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-------AttackNoCD
-
-    local plr = game.Players.LocalPlayer
+------AttackNoCD    
+local plr = game.Players.LocalPlayer
 	local CbFw = getupvalues(require(plr.PlayerScripts.CombatFramework))
 	local CbFw2 = CbFw[2]
 
@@ -2304,7 +2303,7 @@ end
         return ret
     end
     
-    function AttackNoCD()
+    function AttackNoCoolDown()
         if not AutoFarmMasDevilFruit or AutoFarmMasGun then
             if not Auto_Raid then
                 local AC = CbFw2.activeController
@@ -2353,7 +2352,10 @@ end
             end
         end
     end
-    
+
+
+
+
 --Attack Mastery
     function NormalAttack()
         if not _G.NormalAttack then
@@ -2611,7 +2613,7 @@ end)
           if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
           if v.Name == Ms then
           repeat wait(_G.Fast_Delay)
-          AttackNoCD()
+          AttackNoCoolDown()
           bringmob = true
           AutoHaki()
           EquipTool(SelectWeapon)
@@ -2667,7 +2669,7 @@ end)
 									  if v.Name == "Isle Outlaw" or v.Name == "Island Boy" or v.Name == "Sun-kissed Warrior" or v.Name == "Isle Champion" then
 										 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 											 repeat wait(_G.Fast_Delay)
-												 AttackNoCD()
+												 AttackNoCoolDown()
                                                  bringmob = true
 												 AutoHaki()
 												 EquipTool(SelectWeapon)
@@ -2712,7 +2714,7 @@ end)
           if v.Name then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChild("HumanoidRootPart").Position).Magnitude <= 5000 then
             repeat wait(_G.Fast_Delay)
-                AttackNoCD()
+                AttackNoCoolDown()
                 bringmob = true
           AutoHaki()
           EquipTool(SelectWeapon)
@@ -2752,7 +2754,7 @@ end)
                             if _G.CastleRaid and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                                 if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 2000 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         bringmob = true
                                         AutoHaki()
                                         EquipTool(SelectWeapon)
@@ -3103,7 +3105,7 @@ spawn(function()
       for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
       if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") then
       if v.Name == Ms then
-      repeat game:GetService("RunService").Heartbeat:wait()
+        repeat wait(_G.Fast_Delay)
       if v.Humanoid.Health <= v.Humanoid.MaxHealth * KillPercent / 100 then
       _G.UseSkill = true
       else
@@ -3137,7 +3139,7 @@ spawn(function()
       for i,v in pairs (game.Workspace.Enemies:GetChildren()) do
       if v.Name and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") then
       if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v:FindFirstChild("HumanoidRootPart").Position).Magnitude <= 5000 then
-      repeat game:GetService("RunService").Heartbeat:wait()
+        repeat wait(_G.Fast_Delay)
       if v.Humanoid.Health <= v.Humanoid.MaxHealth * KillPercent / 100 then
       _G.UseSkill = true
       else
@@ -3213,7 +3215,7 @@ spawn(function()
                                 if v.Name == "Reborn Skeleton" or v.Name == "Living Zombie" or v.Name == "Demonic Soul" or v.Name == "Posessed Mummy" then
                                     if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Demonic Soul") then
                                         repeat wait(_G.Fast_Delay)
-                                            AttackNoCD()
+                                            AttackNoCoolDown()
                                             AutoHaki()
                                             bringmob = true
                                             EquipTool(SelectWeapon)
@@ -3269,7 +3271,7 @@ spawn(function()
 							for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do 
 								if v.Name == "Cake Prince" then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
 										AutoHaki()
 										EquipTool(SelectWeapon)
 										v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
@@ -3288,7 +3290,7 @@ spawn(function()
                             for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do  
                                 if (v.Name == "Baking Staff" or v.Name == "Head Baker" or v.Name == "Cake Guard" or v.Name == "Cookie Crafter") and v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
 										AutoHaki()
                                         bringmob = true
 										EquipTool(SelectWeapon)
@@ -3349,7 +3351,7 @@ end)
                             if v.Name == "Ship Steward" or v.Name == "Ship Engineer" or v.Name == "Ship Deckhand" or v.Name == "Ship Officer" and v:FindFirstChild("Humanoid") then
                                 if v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         AutoHaki()
                                         bringmob = true
                                         EquipTool(SelectWeapon)
@@ -3420,7 +3422,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
                             if v.Name == _G.SelectBoss then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         AutoHaki()
                                         bringmob = true
                                         EquipTool(SelectWeapon)
@@ -3455,7 +3457,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
                             if v.Name == _G.SelectBoss then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         AutoHaki()
                                         bringmob = true
                                         EquipTool(SelectWeapon)
@@ -3539,7 +3541,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
           if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
           if v.Name == MMon then
             repeat wait(_G.Fast_Delay)
-                AttackNoCD()
+                AttackNoCoolDown()
           AutoHaki()
           bringmob = true
           EquipTool(SelectWeapon)
@@ -3743,7 +3745,7 @@ if Third_Sea then
                             if v.Name == "Terrorshark" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         AutoHaki()
                                         EquipTool(SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
@@ -3785,7 +3787,7 @@ if Third_Sea then
                             if v.Name == "Piranha" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         AutoHaki()
                                         EquipTool(SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
@@ -3825,7 +3827,7 @@ if Third_Sea then
                             if v.Name == "Shark" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         AutoHaki()
                                         EquipTool(SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
@@ -3867,7 +3869,7 @@ if Third_Sea then
                             if v.Name == "Fish Crew Member" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         AutoHaki()
                                         EquipTool(SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
@@ -4077,7 +4079,7 @@ spawn(function()
                                        if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                            if v.Name == "Diablo" or v.Name == "Deandre" or v.Name == "Urban" then
                                             repeat wait(_G.Fast_Delay)
-                                                AttackNoCD()
+                                                AttackNoCoolDown()
                                                    EquipTool(SelectWeapon)
                                                    AutoHaki()
                                                    toTarget(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -4253,25 +4255,58 @@ ToggleAutoW:OnChanged(function(Value)
 
     local AutoMysticIsland = Tabs.Main:AddSection("Mirage Island")
 
-local ToggleTweenMirageIsland = Tabs.Main:AddToggle("ToggleTweenMirageIsland", {Title = "Tween To Mirage Island", Default = false })
-ToggleTweenMirageIsland:OnChanged(function(Value)
-    _G.AutoMysticIsland = Value
-end) 
-Options.ToggleTweenMirageIsland:SetValue(false)
-spawn(function()
-    pcall(function()
-        while wait() do
-            if _G.AutoMysticIsland then
-                if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                    Tween(CFrame.new(game:GetService("Workspace").Map.MysticIsland.Center.Position.X,500,game:GetService("Workspace").Map.MysticIsland.Center.Position.Z))
+
+    Tabs.Main:AddButton({
+        Title = "Tween to Mirage Island",
+        Description = "",
+        Callback = function()
+            TweenMirage()
+        end
+    })
+    function TweenMirage()
+        repeat
+            wait()
+        until game:GetService("Workspace").Map:FindFirstChild("MysticIsland")
+        if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+            AllNPCS = getnilinstances()
+            for r, v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
+                table.insert(AllNPCS, v)
+            end
+            for r, v in pairs(AllNPCS) do
+                if v.Name == "Advanced Fruit Dealer" then
+                    Tween2(v.HumanoidRootPart.CFrame)
                 end
             end
         end
-    end)
-end)
+    end
 
 
+    Tabs.Main:AddButton({
+        Title = "Tween to Highest Point",
+        Description = "",
+        Callback = function()
+            TwenetoHighestPoint()
+        end
+    })
 
+    function TwenetoHighestPoint()
+        HighestPoint = getHighestPoint()
+        if HighestPoint then
+            Tween2(HighestPoint.CFrame * CFrame.new(0, 211.88, 0))
+        end
+    end
+    function getHighestPoint()
+        if not game.workspace.Map:FindFirstChild("MysticIsland") then
+            return nil
+        end
+        for r, v in pairs(game:GetService("Workspace").Map.MysticIsland:GetDescendants()) do
+            if v:IsA("MeshPart") then
+                if v.MeshId == "rbxassetid://6745037796" then
+                    return v
+                end
+            end
+        end
+    end
 
 local ToggleTweenGear = Tabs.Main:AddToggle("ToggleTweenGear", {Title = "Tween To Gear", Default = false })
 ToggleTweenGear:OnChanged(function(Value)
@@ -4287,7 +4322,7 @@ spawn(function()
 					for i,v in pairs(game:GetService("Workspace").Map.MysticIsland:GetChildren()) do 
 						if v:IsA("MeshPart")then 
                             if v.Material ==  Enum.Material.Neon then  
-                                Tween(v.CFrame)
+                                Tween2(v.CFrame)
                             end
                         end
 					end
@@ -4372,7 +4407,7 @@ if Third_Sea then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if string.find(v.Name , "Soul Reaper") then
                                 repeat wait(_G.Fast_Delay)
-                                    AttackNoCD()
+                                    AttackNoCoolDown()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -4445,7 +4480,7 @@ if Third_Sea then
                                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                                            if v.Name == ("Longma" or v.Name == "Longma") and v.Humanoid.Health > 0 and v:IsA("Model") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") then
                                             repeat wait(_G.Fast_Delay)
-                                                AttackNoCD()
+                                                AttackNoCoolDown()
                                                    AutoHaki()
                                                    if not game.Players.LocalPlayer.Character:FindFirstChild(SelectWeapon) then
                                                        wait()
@@ -4511,7 +4546,7 @@ if Second_Sea then
                         for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
                             if v.Name == "Core" and v.Humanoid.Health > 0 then
                                 repeat wait(_G.Fast_Delay)
-                                    AttackNoCD()
+                                    AttackNoCoolDown()
                                     repeat Tween(CFrame.new(448.46756, 199.356781, -441.389252))
                                         wait()
                                     until not _G.Factory or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(448.46756, 199.356781, -441.389252)).Magnitude <= 10
@@ -4557,7 +4592,7 @@ end
                             if v.Name == "Dough King" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat wait(_G.Fast_Delay)
-                                        AttackNoCD()
+                                        AttackNoCoolDown()
                                         AutoHaki()
                                         EquipTool(SelectWeapon)
                                         v.HumanoidRootPart.CanCollide = false
@@ -4626,7 +4661,7 @@ if Second_Sea then
     end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Setting
-local SettingFarm = Tabs.Setting:AddSection("Setting Farming")
+local SettingFarm = Tabs.Setting:AddSection("Farming")
 
  local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = " Enable Fast Attack", Default = true })
 
@@ -4640,7 +4675,7 @@ spawn(function()
 		pcall(function()
 			if _G.FastAttackFaiFao then
 				repeat wait(_G.Fast_Delay)
-					AttackNoCD()
+					AttackNoCoolDown()
 				until not _G.FastAttackFaiFao
 			end
 		end)
@@ -4662,7 +4697,7 @@ Camera:Stop()
                         if _G.BringMob and bringmob then
                             if v.Name == MonFarm and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                                 if v.Name == "Factory Staff" then
-                                    if (v.HumanoidRootPart.Position - FarmPos.Position).Magnitude <= 360 then
+                                    if (v.HumanoidRootPart.Position - FarmPos.Position).Magnitude <= 300 then
                                         v.Head.CanCollide = false
                                         v.HumanoidRootPart.CanCollide = false
                                         v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
@@ -4673,7 +4708,7 @@ Camera:Stop()
                                         sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
                                     end
                                 elseif v.Name == MonFarm then
-                                    if (v.HumanoidRootPart.Position - FarmPos.Position).Magnitude <= 310 then
+                                    if (v.HumanoidRootPart.Position - FarmPos.Position).Magnitude <= 300 then
                                         v.Head.CanCollide = false
                                         v.HumanoidRootPart.CanCollide = false
                                         v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
@@ -6104,7 +6139,7 @@ spawn(function()
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Order" then
                                 repeat wait(_G.Fast_Delay)
-                                    AttackNoCD()
+                                    AttackNoCoolDown()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -6347,7 +6382,7 @@ spawn(function()
                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     bringmob = true
                                     repeat wait(_G.Fast_Delay)
-                                    AttackNoCD()
+                                    AttackNoCoolDown()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
@@ -6993,22 +7028,18 @@ Tabs.Misc:AddButton({
 	Title = "Remove Fog",
 	Description = "",
 	Callback = function()
-        game:GetService("Lighting").LightingLayers:Destroy()
-	    game:GetService("Lighting").Sky:Destroy()
+        NoFog()
     end
 })
-
-Tabs.Misc:AddButton({
-	Title = "Always Day",
-	Description = "",
-	Callback = function()
-        game:GetService("RunService").Heartbeat:wait() do
-        game:GetService("Lighting").ClockTime = 12
+function NoFog()
+    local c = game.Lighting
+    c.FogEnd = 100000
+    for r, v in pairs(c:GetDescendants()) do
+        if v:IsA("Atmosphere") then
+            v:Destroy()
         end
     end
-})
-
-
+end
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Hop
