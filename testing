@@ -5046,7 +5046,7 @@ Options.ToggleFastAttack:SetValue(false)
 local SliderDelayAttackPlayer = Tabs.Player:AddSlider("SliderDelayAttackPlayer", {
     Title = "Delay Fast (sec)",
     Description = "",
-    Default = 0.15,
+    Default = 0.1,
     Min = 0,
     Max = 5,
     Rounding = 1,
@@ -5059,7 +5059,7 @@ SliderDelayAttackPlayer:OnChanged(function(Value)
    _G.DelayAttackPlayer = Value
 end)
 
-SliderDelayAttackPlayer:SetValue(0.15)
+SliderDelayAttackPlayer:SetValue(0.1)
 
 
 
