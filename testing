@@ -1990,6 +1990,16 @@ end
     _G.Clip2 = false
     end
    
+-- [Function (Abandoned Quest , Others)]
+
+function Com(com,...)
+	local Remote = game:GetService('ReplicatedStorage').Remotes:FindFirstChild("Comm"..com)
+	if Remote:IsA("RemoteEvent") then
+		Remote:FireServer(...)
+	elseif Remote:IsA("RemoteFunction") then
+		Remote:InvokeServer(...)
+	end
+end
 
 --BTP
 function BTP(Position)
@@ -2422,7 +2432,7 @@ end)
     end
 end
 ---Bypass Teleport
-function BTP(P)
+function to(P)
 	repeat wait(0.5)
 		game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
@@ -2431,7 +2441,7 @@ function BTP(P)
 	until (P.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000
 end
 
-function BTP(p)
+function to(p)
 		pcall(function()
 			if (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 2000 and not Auto_Raid and game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
 				if NameMon == "FishmanQuest" then
@@ -2520,9 +2530,9 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     DropdownDelayAttack:OnChanged(function(Value)
     _G.FastAttackFaiFao_Mode = Value
 	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
-		_G.Fast_Delay = 0.17
+		_G.Fast_Delay = 0.12
 	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.25
+		_G.Fast_Delay = 0.2
 	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
 		_G.Fast_Delay = 0.05
 	end
@@ -2598,7 +2608,7 @@ end)
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
           if BypassTP then
             if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
-            BTP(CFrameQ)
+            to(CFrameQ)
             elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
             Tween(CFrameQ)
             end
@@ -2769,7 +2779,7 @@ end)
                     else
                         if BypassTP then
                         if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameCastleRaid.Position).Magnitude > 2500 then
-                        BTP(CFrameCastleRaid)
+                        to(CFrameCastleRaid)
                         elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameCastleRaid.Position).Magnitude < 2500 then
                         Tween(CFrameCastleRaid)
                         end
@@ -3090,7 +3100,7 @@ spawn(function()
       game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
       if BypassTP then
         if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
-        BTP(CFrameQ)
+        to(CFrameQ)
         wait(0.2)
         elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
         Tween(CFrameQ)
@@ -3198,7 +3208,7 @@ spawn(function()
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
                     if BypassTP then
                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - BoneCFrame2.Position).Magnitude > 2500 then
-                       BTP(BoneCFrame2)
+                       to(BoneCFrame2)
                        elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - BoneCFrame.Position).Magnitude < 2500 then
                        Tween(BoneCFrame)
                        end
@@ -3260,7 +3270,7 @@ spawn(function()
                     local CakeCFrame = CFrame.new(-2142.66821,71.2588654,-12327.4619,0.996939838,-4.33107843e-08,0.078172572,4.20252917e-08,1,1.80894251e-08,-0.078172572,-1.47488439e-08, 0.996939838)
                     if BypassTP then
                         if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakeCFrame.Position).Magnitude > 2000 then
-                        BTP(CakeCFrame)
+                        to(CakeCFrame)
                         wait(3)
                         elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakeCFrame.Position).Magnitude < 2000 then
                         Tween(CakeCFrame)
@@ -3440,7 +3450,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
 						if ((game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 1500 then
 							Tween(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
 						else
-							BTP(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
+							to(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
 					    end
                     end
                 end)
@@ -3529,7 +3539,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
        
           if BypassTP then
             if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - MPos.Position).Magnitude > 3500 then
-            BTP(MPos)
+            to(MPos)
             elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - MPos.Position).Magnitude < 3500 then
             Tween(MPos)
             end
@@ -4663,27 +4673,6 @@ if Second_Sea then
 --Setting
 local SettingFarm = Tabs.Setting:AddSection("Farming")
 
- local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = " Enable Fast Attack", Default = true })
-
-    ToggleFastAttack:OnChanged(function(Value)
-     _G.FastAttackFaiFao = Value
-    end)
-    Options.ToggleFastAttack:SetValue(true)
-
-spawn(function()
-	while wait(0.4) do
-		pcall(function()
-			if _G.FastAttackFaiFao then
-				repeat wait(_G.Fast_Delay)
-					AttackNoCoolDown()
-				until not _G.FastAttackFaiFao
-			end
-		end)
-	end
-end)
-
-local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
-Camera:Stop()
 
     local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = " Enable Bring Mob / Magnet", Default = true })
     ToggleBringMob:OnChanged(function(Value)
@@ -5010,16 +4999,20 @@ ToggleTeleport:OnChanged(function(Value)
         toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
         wait()
     end
-    pcall(function()
-        if _G.TeleportPly then
-            repeat toTarget(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
-        end
-    end)
 end)
 Options.ToggleTeleport:SetValue(false)
 
-
-
+spawn(function()
+	while wait() do
+		if _G.TeleportPly then
+			pcall(function()
+				if game.Players:FindFirstChild(_G.SelectPly) then
+					toTarget(game.Players[_G.SelectPly].Character.HumanoidRootPart.CFrame)
+				end
+			end)
+		end
+	end
+end)
 
 
 
@@ -5035,6 +5028,128 @@ ToggleQuanSat:OnChanged(function(Value)
     game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players").LocalPlayer.Character.Humanoid
 end)
 Options.ToggleQuanSat:SetValue(false)
+
+
+
+
+
+
+local ToggleFastAttack = Tabs.Player:AddToggle("ToggleFastAttack", {Title = " Click Attack Player", Default = false })
+
+ToggleFastAttack:OnChanged(function(Value)
+ _G.FastAttackFaiFao = Value
+end)
+Options.ToggleFastAttack:SetValue(false)
+
+
+
+local SliderDelayAttackPlayer = Tabs.Player:AddSlider("SliderDelayAttackPlayer", {
+    Title = "Delay Fast (sec)",
+    Description = "",
+    Default = 0.15,
+    Min = 0,
+    Max = 5,
+    Rounding = 1,
+    Callback = function(Value)
+       _G.DelayAttackPlayer = Value
+    end
+})
+
+SliderDelayAttackPlayer:OnChanged(function(Value)
+   _G.DelayAttackPlayer = Value
+end)
+
+SliderDelayAttackPlayer:SetValue(0.15)
+
+
+
+
+
+
+
+
+
+
+
+spawn(function()
+while wait() do
+    pcall(function()
+        if _G.FastAttackFaiFao then
+            repeat wait(_G.DelayAttackPlayer)
+               AttackNoCoolDown()
+            until not _G.FastAttackFaiFao
+        end
+    end)
+end
+end)
+local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
+Camera:Stop()
+
+
+function getAllBladeHitsPlayers(Sizes)
+	local Hits = {}
+	local Client = game.Players.LocalPlayer
+	local Characters = game:GetService("Workspace").Characters:GetChildren()
+	for i=1,#Characters do local v = Characters[i]
+		local Human = v:FindFirstChildOfClass("Humanoid")
+		if v.Name ~= game.Players.LocalPlayer.Name and Human and Human.RootPart and Human.Health > 0 and Client:DistanceFromCharacter(Human.RootPart.Position) < Sizes+5 then
+			table.insert(Hits,Human.RootPart)
+		end
+	end
+	return Hits
+end
+
+function getAllBladeHits(Sizes)
+	local Hits = {}
+	local Client = game.Players.LocalPlayer
+	local Enemies = game:GetService("Workspace").Enemies:GetChildren()
+	for i=1,#Enemies do local v = Enemies[i]
+		local Human = v:FindFirstChildOfClass("Humanoid")
+		if Human and Human.RootPart and Human.Health > 0 and Client:DistanceFromCharacter(Human.RootPart.Position) < Sizes+5 then
+			table.insert(Hits,Human.RootPart)
+		end
+	end
+	return Hits
+end
+
+
+
+function AttackPlayers()
+	local ac = CombatFrameworkR.activeController
+	if ac and ac.equipped then
+		for indexincrement = 1, 1 do
+			local bladehit = getAllBladeHitsPlayers(60)
+			if #bladehit > 0 then
+				local AcAttack8 = debug.getupvalue(ac.attack, 5)
+				local AcAttack9 = debug.getupvalue(ac.attack, 6)
+				local AcAttack7 = debug.getupvalue(ac.attack, 4)
+				local AcAttack10 = debug.getupvalue(ac.attack, 7)
+				local NumberAc12 = (AcAttack8 * 798405 + AcAttack7 * 727595) % AcAttack9
+				local NumberAc13 = AcAttack7 * 798405
+				(function()
+					NumberAc12 = (NumberAc12 * AcAttack9 + NumberAc13) % 1099511627776
+					AcAttack8 = math.floor(NumberAc12 / AcAttack9)
+					AcAttack7 = NumberAc12 - AcAttack8 * AcAttack9
+				end)()
+				AcAttack10 = AcAttack10 + 1
+				debug.setupvalue(ac.attack, 5, AcAttack8)
+				debug.setupvalue(ac.attack, 6, AcAttack9)
+				debug.setupvalue(ac.attack, 4, AcAttack7)
+				debug.setupvalue(ac.attack, 7, AcAttack10)
+				for k, v in pairs(ac.animator.anims.basic) do
+					v:Play(0.01,0.01,0.01)
+				end                 
+				if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
+					game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
+					game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(NumberAc12 / 1099511627776 * 16777215), AcAttack10)
+					game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, 2, "") 
+				end
+			end
+		end
+	end
+end
+
+
 
 
 local Teleport = Tabs.Player:AddSection("Combat")
@@ -5268,7 +5383,7 @@ function InfAbility()
             inf.Speed = NumberRange.new(30, 30)
             inf.SpreadAngle = Vector2.new(360, 360)
             inf.Texture = "rbxassetid://243098098"
-            inf.VelocityInheritance = 0
+            inf.VelotyInheritance = 0
             inf.ZOffset = 2
             inf.Transparency = NumberSequence.new(0)
             inf.Color = ColorSequence.new(Color3.fromRGB(0, 255, 255), Color3.fromRGB(0, 255, 255))
