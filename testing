@@ -5061,16 +5061,6 @@ end)
 
 SliderDelayAttackPlayer:SetValue(0.1)
 
-
-
-
-
-
-
-
-
-
-
 spawn(function()
 while wait() do
     pcall(function()
