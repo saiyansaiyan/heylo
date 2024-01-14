@@ -3450,7 +3450,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
 						if ((game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 1500 then
 							Tween(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
 						else
-							to(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
+							toTarget(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
 					    end
                     end
                 end)
@@ -4996,6 +4996,7 @@ ToggleTeleport:OnChanged(function(Value)
     _G.TeleportPly = Value
     if Value == false then
         wait()
+        AutoHaki()
         toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
         wait()
     end
