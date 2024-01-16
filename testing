@@ -5606,9 +5606,9 @@ ToggleIsland:OnChanged(function(Value)
             elseif _G.SelectIsland == "Dark Area" then
                 toTarget(CFrame.new(3780.0302734375, 22.652164459229, -3498.5859375))
             elseif _G.SelectIsland == "Flamingo Mansion" then
-                BTPZ(CFrame.new(-483.73370361328, 332.0383605957, 595.32708740234))
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-281.93707275390625, 306.130615234375, 609.280029296875))
             elseif _G.SelectIsland == "Flamingo Room" then
-                toTarget(CFrame.new(2284.4140625, 15.152037620544, 875.72534179688))
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(2284.912109375, 15.152034759521484, 905.48291015625))
             elseif _G.SelectIsland == "Green Zone" then
                 toTarget( CFrame.new(-2448.5300292969, 73.016105651855, -3210.6306152344))
             elseif _G.SelectIsland == "Factory" then
@@ -5622,7 +5622,7 @@ ToggleIsland:OnChanged(function(Value)
             elseif _G.SelectIsland == "Punk Hazard" then
                 toTarget(CFrame.new(-6127.654296875, 15.951762199402, -5040.2861328125))
             elseif _G.SelectIsland == "Cursed Ship" then
-                toTarget(CFrame.new(923.40197753906, 125.05712890625, 32885.875))
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.40197753906, 125.05712890625, 32885.875))
             elseif _G.SelectIsland == "Ice Castle" then
                 toTarget(CFrame.new(6148.4116210938, 294.38687133789, -6741.1166992188))
             elseif _G.SelectIsland == "Forgotten Island" then
@@ -5634,17 +5634,17 @@ ToggleIsland:OnChanged(function(Value)
             elseif _G.SelectIsland == "Great Tree" then
                 toTarget(CFrame.new(2681.2736816406, 1682.8092041016, -7190.9853515625))
             elseif _G.SelectIsland == "Castle On The Sea" then
-                BTPZ(CFrame.new(-5075.50927734375, 314.5155029296875, -3150.0224609375))
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5075.50927734375, 314.5155029296875, -3150.0224609375))
             elseif _G.SelectIsland == "MiniSky" then
                 toTarget(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
             elseif _G.SelectIsland == "Port Town" then
                 toTarget(CFrame.new(-290.7376708984375, 6.729952812194824, 5343.5537109375))
             elseif _G.SelectIsland == "Hydra Island" then
-                BTPZ(CFrame.new(5753.5478515625, 610.7880859375, -282.33172607421875))
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(5753.5478515625, 610.7880859375, -282.33172607421875))
             elseif _G.SelectIsland == "Floating Turtle" then
                 toTarget(CFrame.new(-13274.528320313, 531.82073974609, -7579.22265625))
             elseif _G.SelectIsland == "Mansion" then
-                BTPZ(CFrame.new(-12468.5380859375, 375.0094299316406, -7554.62548828125))
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12468.5380859375, 375.0094299316406, -7554.62548828125))
             elseif _G.SelectIsland == "Haunted Castle" then
                 toTarget(CFrame.new(-9515.3720703125, 164.00624084473, 5786.0610351562))
             elseif _G.SelectIsland == "Ice Cream Island" then
