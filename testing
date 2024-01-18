@@ -24,7 +24,6 @@ local Tabs = {
     Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
 	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
     Hop = Window:AddTab({ Title = "Hop", Icon = "wifi" }),
-    Settings = Window:AddTab({ Title = "Coonfig Ui", Icon = "box" }),
 }
 local Options = Fluent.Options
 do
@@ -2138,6 +2137,7 @@ function Tween(Pos)
         _G.Clip = false
     end
 end
+
 
 ---------
 
@@ -5541,6 +5541,8 @@ ToggleIsland:OnChanged(function(Value)
             elseif _G.SelectIsland == "Mob Island" then
                 toTarget(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
             elseif _G.SelectIsland == "The Cafe" then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-281.93707275390625, 306.130615234375, 609.280029296875))
+                wait(0.5)
                 toTarget(CFrame.new(-380.47927856445, 77.220390319824, 255.82550048828))
             elseif _G.SelectIsland == "Frist Spot" then
                 toTarget(CFrame.new(-11.311455726624, 29.276733398438, 2771.5224609375))
@@ -6250,7 +6252,7 @@ Tabs.Race:AddButton({
     Title = "Timple Of Time",
     Description = "",
     Callback = function()
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
     end
 })
 
@@ -6259,6 +6261,8 @@ Tabs.Race:AddButton({
     Title = "Lever Pull",
     Description = "",
     Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
+        wait(0.5)
         Tween2(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
     end
 })
@@ -6268,25 +6272,19 @@ Tabs.Race:AddButton({
     Title = "Acient One",
     Description = "",
     Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
+        wait(0.5)
         Tween2(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
     end
 })
 
 
 local Mastery = Tabs.Race:AddSection("Auto Race")
-
-
 Tabs.Race:AddButton({
     Title = "Race Door",
     Description = "",
     Callback = function()
-        Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875) 
-        wait(0.1)
-           Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875) 
-           wait(0.1)
-              Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875) 
-              wait(0.1)
-                 Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875) 
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
             wait(0.5)
                     if game:GetService("Players").LocalPlayer.Data.Race.Value == "Human" then
                     Tween2(CFrame.new(29221.822265625, 14890.9755859375, -205.99114990234375))
