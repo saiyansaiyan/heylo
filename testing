@@ -5493,17 +5493,10 @@ DropdownIsland:OnChanged(function(Value)
     _G.SelectIsland = Value
 end)
 
-
-local ToggleIsland = Tabs.Teleport:AddToggle("ToggleIsland", {Title = "Teleport to Island", Default = false })
-ToggleIsland:OnChanged(function(Value)
-    _G.TeleportIsland = Value
-    if Value == false then
-        wait()
-        toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-        wait()
-    end
-    if _G.TeleportIsland == true then
-        repeat wait()
+Tabs.Teleport:AddButton({
+    Title = "Tween",
+    Description = "",
+    Callback = function()
             if _G.SelectIsland == "WindMill" then
                 toTarget(CFrame.new(979.79895019531, 16.516613006592, 1429.0466308594))
             elseif _G.SelectIsland == "Marine" then
@@ -5543,7 +5536,7 @@ ToggleIsland:OnChanged(function(Value)
             elseif _G.SelectIsland == "The Cafe" then
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-281.93707275390625, 306.130615234375, 609.280029296875))
                 wait(0.5)
-                toTarget(CFrame.new(-380.47927856445, 77.220390319824, 255.82550048828))
+                Tween2(CFrame.new(-380.47927856445, 77.220390319824, 255.82550048828))
             elseif _G.SelectIsland == "Frist Spot" then
                 toTarget(CFrame.new(-11.311455726624, 29.276733398438, 2771.5224609375))
             elseif _G.SelectIsland == "Dark Area" then
@@ -5573,13 +5566,13 @@ ToggleIsland:OnChanged(function(Value)
             elseif _G.SelectIsland == "Ussop Island" then
                 toTarget(CFrame.new(4816.8618164063, 8.4599885940552, 2863.8195800781))
             elseif _G.SelectIsland == "Mini Sky Island" then
-                toTarget(CFrame.new(-288.74060058594, 49326.31640625, -35248.59375))
+                Tween2(CFrame.new(-288.74060058594, 49326.31640625, -35248.59375))
             elseif _G.SelectIsland == "Great Tree" then
                 toTarget(CFrame.new(2681.2736816406, 1682.8092041016, -7190.9853515625))
             elseif _G.SelectIsland == "Castle On The Sea" then
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5075.50927734375, 314.5155029296875, -3150.0224609375))
             elseif _G.SelectIsland == "MiniSky" then
-                toTarget(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
+                Tween2(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
             elseif _G.SelectIsland == "Port Town" then
                 toTarget(CFrame.new(-290.7376708984375, 6.729952812194824, 5343.5537109375))
             elseif _G.SelectIsland == "Hydra Island" then
@@ -5603,10 +5596,17 @@ ToggleIsland:OnChanged(function(Value)
             elseif _G.SelectIsland == "Tiki Outpost" then
                 toTarget(CFrame.new(-16542.447265625, 55.68632888793945, 1044.41650390625))
             end
-        until not _G.TeleportIsland
-    end
-end)
-Options.ToggleIsland:SetValue(false)
+        end
+    })
+
+    Tabs.Teleport:AddButton({
+        Title = "Stop Tween",
+        Description = "",
+        Callback = function()
+           toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+        end
+    })
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Fruit
