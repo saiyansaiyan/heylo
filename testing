@@ -2484,27 +2484,22 @@ function to(p)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ---Close UI
-local ToggleUI = Instance.new("ScreenGui")
-local ToggleButton = Instance.new("TextButton")
-local ToggleButtonHUI = Instance.new("UICorner")
-ToggleUI.Name = "ToggleUI"
-ToggleUI.Parent = game.CoreGui
-ToggleUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
 
-ToggleButton.Name = "ToggleButton"
-ToggleButton.Parent = ToggleUI
-ToggleButton.BackgroundColor3 = Color3.fromRGB(30,20,20)
-ToggleButton.BackgroundTransparency = 0.1
-ToggleButton.BorderSizePixel = 0
-ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.Font = Enum.Font.SourceSans
-ToggleButton.Text = "Open|Close"
-ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-ToggleButton.TextSize = 14.000
-ToggleButton.Draggable = true
-ToggleButton.MouseButton1Click:Connect(function()
-	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+ImageButton.Size = UDim2.new(0, 50, 0, 50)
+ImageButton.Draggable = true
+ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
+ImageButton.MouseButton1Down:connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Remove Effect
@@ -4918,6 +4913,16 @@ SelectedPly:OnChanged(function(Value)
 end)
 
 
+Tabs.Player:AddButton({
+    Title = "Refresh Player",
+    Description = "",
+    Callback = function()
+        table.clear(Playerslist)
+        for i,v in pairs(game:GetService("Players"):GetChildren()) do
+            table.insert(Playerslist,v.Name)
+        end
+    end
+})
 
 local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport To Player", Default = false })
 ToggleTeleport:OnChanged(function(Value)
