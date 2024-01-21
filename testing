@@ -2587,7 +2587,10 @@ end)
     end)
 
 
-    local ToggleLevel = Tabs.Main:AddToggle("ToggleLevel", {Title = "Auto Level",Description = "Cày Cấp Độ",Default = false })
+    local ToggleLevel = Tabs.Main:AddToggle("ToggleLevel", {
+        Title = "Auto Level",
+        Description = "Cày Cấp Độ",
+        Default = false })
     ToggleLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
         if Value == false then
@@ -2695,7 +2698,10 @@ end)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-    local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Kill Near | Mob Aura",Description = "Đánh Quái Ở Gần", Default = false })
+    local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {
+        Title = "Kill Near | Mob Aura",
+        Description = "Đánh Quái Ở Gần",
+        Default = false })
     ToggleMobAura:OnChanged(function(Value)
         _G.AutoNear = Value
         if Value == false then
@@ -2739,7 +2745,10 @@ end)
       end)
 
 
-    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {Title = "Auto Castle Raid | Pirates Castle",Description = "Đánh Hải Tặc ở Pháo Đài", Default = false })
+    local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {
+        Title = "Auto Castle Raid | Pirates Castle",
+        Description = "Đánh Hải Tặc ở Pháo Đài", 
+        Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
     end)
@@ -2852,7 +2861,10 @@ function TPchest(P1)
 
 
 if Third_Sea then
-local ToggleChest = Tabs.Main:AddToggle("ToggleChest", {Title = "Auto Chest Stop If Has Items [Tp]",Description = "Nhặt Rương dừng Khi Có Vật Phẩm [Tp]", Default = false })
+local ToggleChest = Tabs.Main:AddToggle("ToggleChest", {
+    Title = "Auto Chest Stop If Has Items [Tp]",
+    Description = "Nhặt Rương dừng Khi Có Vật Phẩm [Tp]", 
+    Default = false })
 ToggleChest:OnChanged(function(Value)
     _G.chestsea3 = Value
 end)
@@ -2860,14 +2872,20 @@ Options.ToggleChest:SetValue(false)
 end
 
 if Second_Sea then
-local ToggleChest = Tabs.Main:AddToggle("ToggleChest", {Title = "Auto Chest Stop If Has Items [Tp]",Description = "Nhặt Rương dừng Khi Có Vật Phẩm [Tp]", Default = false })
+local ToggleChest = Tabs.Main:AddToggle("ToggleChest", {
+    Title = "Auto Chest Stop If Has Items [Tp]",
+    Description = "Nhặt Rương dừng Khi Có Vật Phẩm [Tp]", 
+    Default = false })
 ToggleChest:OnChanged(function(Value)
     _G.chestsea2 = Value
 end)
 Options.ToggleChest:SetValue(false)
 end
 
-local ToggleChestTween = Tabs.Main:AddToggle("ToggleChestTween", {Title = "Auto Chest [Tween]",Description = "Nhặt Rương [Bay]", Default = false })
+local ToggleChestTween = Tabs.Main:AddToggle("ToggleChestTween", {
+    Title = "Auto Chest [Tween]",
+    Description = "Nhặt Rương [Bay]", 
+    Default = false })
 ToggleChestTween:OnChanged(function(Value)
     AutoFarmChest = Value
 end)
@@ -2994,7 +3012,10 @@ local Mastery = Tabs.Main:AddSection("Mastery Farm")
         TypeMastery = Value
     end)
 
-    local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {Title = "Auto BF Mastery",Description = "Cày Thông Thạo Trái", Default = false })
+    local ToggleMasteryFruit = Tabs.Main:AddToggle("ToggleMasteryFruit", {
+        Title = "Auto BF Mastery",
+        Description = "Cày Thông Thạo Trái", 
+        Default = false })
     ToggleMasteryFruit:OnChanged(function(Value)
         AutoFarmMasDevilFruit = Value
     end)
@@ -3163,7 +3184,10 @@ end)
 local MiscFarm = Tabs.Main:AddSection("Misc Farm")
 
 if Third_Sea then
-local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {Title = "Auto Bone",Description = "Cày Xương", Default = false })
+local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {
+    Title = "Auto Bone",
+    Description = "Cày Xương", 
+    Default = false })
 ToggleBone:OnChanged(function(Value)
     _G.AutoBone = Value
     if Value == false then
@@ -3231,7 +3255,10 @@ spawn(function()
     end
 end)
 
-local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Cake Prince",Description = "Cày Tư Lệnh Bột", Default = false })
+local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {
+    Title = "Auto Cake Prince",
+    Description = "Cày Tư Lệnh Bột", 
+    Default = false })
 ToggleCake:OnChanged(function(Value)
  _G.CakePrince = Value
  if Value == false then
@@ -3293,7 +3320,10 @@ spawn(function()
     end)
 
 
-    local ToggleSpawnCake = Tabs.Main:AddToggle("ToggleSpawnCake", {Title = "Auto Spawn Cake Prince",Description = "Tự Động Triệu Hồi Tư lệnh Bột", Default = true })
+    local ToggleSpawnCake = Tabs.Main:AddToggle("ToggleSpawnCake", {
+        Title = "Auto Spawn Cake Prince",
+        Description = "Tự Động Triệu Hồi Tư lệnh Bột", 
+        Default = true })
     ToggleSpawnCake:OnChanged(function(Value)
       _G.SpawnCakePrince = Value
     end)
@@ -3317,7 +3347,10 @@ spawn(function()
 end)
 
     if Second_Sea then
-    local ToggleVatChatKiDi = Tabs.Main:AddToggle("ToggleVatChatKiDi", {Title = "Auto Ectoplasm",Description = "Cày vật Chất kì Dị", Default = false })
+    local ToggleVatChatKiDi = Tabs.Main:AddToggle("ToggleVatChatKiDi", {
+        Title = "Auto Ectoplasm",
+        Description = "Cày vật Chất kì Dị", 
+        Default = false })
     ToggleVatChatKiDi:OnChanged(function(Value)
         _G.Ectoplasm = Value
     end)
@@ -3387,7 +3420,10 @@ local boss = Tabs.Main:AddSection("Boss Farm")
 		_G.SelectBoss = Value
     end)
 
-	local ToggleAutoFarmBoss = Tabs.Main:AddToggle("ToggleAutoFarmBoss", {Title = "Kill Boss",Description = "Đánh Boss", Default = false })
+	local ToggleAutoFarmBoss = Tabs.Main:AddToggle("ToggleAutoFarmBoss", {
+        Title = "Kill Boss",
+        Description = "Đánh Boss", 
+        Default = false })
 
     ToggleAutoFarmBoss:OnChanged(function(Value)
 		_G.AutoBoss = Value
@@ -3455,7 +3491,10 @@ local boss = Tabs.Main:AddSection("Boss Farm")
         SelectMaterial = Value
     end)
 
-    local ToggleMaterial = Tabs.Main:AddToggle("ToggleMaterial", {Title = "Auto Material",Description = "Cày Nguyên Liệu", Default = false })
+    local ToggleMaterial = Tabs.Main:AddToggle("ToggleMaterial", {
+        Title = "Auto Material",
+        Description = "Cày Nguyên Liệu", 
+        Default = false })
 
     ToggleMaterial:OnChanged(function(Value)
         _G.AutoMaterial = Value
