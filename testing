@@ -5898,7 +5898,7 @@ Tabs.Teleport:AddButton({
                 toTarget(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
             elseif _G.SelectIsland == "The Cafe" then
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-281.93707275390625, 306.130615234375, 609.280029296875))
-                wait(0.5)
+                wait(0.1)
                 Tween2(CFrame.new(-380.47927856445, 77.220390319824, 255.82550048828))
             elseif _G.SelectIsland == "Frist Spot" then
                 toTarget(CFrame.new(-11.311455726624, 29.276733398438, 2771.5224609375))
@@ -6532,24 +6532,25 @@ end)
 end
 end)
 
-
 if Second_Sea then
 Tabs.Raid:AddButton({
     Title = "Raid Lab",
     Description = "Chổ Tập Kích",
     Callback = function()
-        Tween2(CFrame.new(-6438.73535, 250.645355, -4501.50684))
-    end
+     Tween2(CFrame.new(-6438.73535, 250.645355, -4501.50684))
+end
 })
 elseif Third_Sea then
     Tabs.Raid:AddButton({
         Title = "Raid Lab",
         Description = "Chổ Tập Kích",
         Callback = function()
-            Tween2(CFrame.new(-5017.40869, 314.844055, -2823.0127, -0.925743818, 4.48217499e-08, -0.378151238, 4.55503146e-09, 1, 1.07377559e-07, 0.378151238, 9.7681621e-08, -0.925743818))
+		 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5075.50927734375, 314.5155029296875, -3150.0224609375))
+           Tween2(CFrame.new(-5017.40869, 314.844055, -2823.0127, -0.925743818, 4.48217499e-08, -0.378151238, 4.55503146e-09, 1, 1.07377559e-07, 0.378151238, 9.7681621e-08, -0.925743818))
         end
-    })
+        })
 end
+
 
 
 
@@ -6627,7 +6628,6 @@ Tabs.Race:AddButton({
     Description = "Cần Gạt",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
-        wait(0.5)
         Tween2(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
     end
 })
@@ -6638,7 +6638,6 @@ Tabs.Race:AddButton({
     Description = "Npc Mua Bánh Răng",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
-        wait(0.5)
         Tween2(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
     end
 })
@@ -6650,7 +6649,6 @@ Tabs.Race:AddButton({
     Description = "Tộc Của bạn",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
-            wait(0.5)
                     if game:GetService("Players").LocalPlayer.Data.Race.Value == "Human" then
                     Tween2(CFrame.new(29221.822265625, 14890.9755859375, -205.99114990234375))
                     elseif game:GetService("Players").LocalPlayer.Data.Race.Value == "Skypiea" then
