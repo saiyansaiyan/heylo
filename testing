@@ -5,7 +5,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Fai Fao Hub | Blox Fruits",
-    SubTitle = "Version 2.3",
+    SubTitle = "Version 3.0",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
     Acrylic = true,
@@ -2302,67 +2302,82 @@ end
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 ------AttackNoCD    
-local plr = game.Players.LocalPlayer
-	local CbFw = getupvalues(require(plr.PlayerScripts.CombatFramework))
-	local CbFw2 = CbFw[2]
-
-    function GetCurrentBlade() 
-        local p13 = CbFw2.activeController
-        local ret = p13.blades[1]
-        if not ret then return end
-        while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-        return ret
-    end
-    
-    function AttackNoCoolDown()
-        if not AutoFarmMasDevilFruit or AutoFarmMasGun then
-            if not Auto_Raid then
-                local AC = CbFw2.activeController
-                for i = 1, 1 do 
-                    local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-                        plr.Character,
-                        {plr.Character.HumanoidRootPart},
-                        60
-                    )
-                    local cac = {}
-                    local hash = {}
-                    for k, v in pairs(bladehit) do
-                        if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                            table.insert(cac, v.Parent.HumanoidRootPart)
-                            hash[v.Parent] = true
-                        end
-                    end
-                    bladehit = cac
-                    if #bladehit > 0 then
-                        local u8 = debug.getupvalue(AC.attack, 5)
-                        local u9 = debug.getupvalue(AC.attack, 6)
-                        local u7 = debug.getupvalue(AC.attack, 4)
-                        local u10 = debug.getupvalue(AC.attack, 7)
-                        local u12 = (u8 * 798405 + u7 * 727595) % u9
-                        local u13 = u7 * 798405
-                        (function()
-                            u12 = (u12 * u9 + u13) % 1099511627776
-                            u8 = math.floor(u12 / u9)
-                            u7 = u12 - u8 * u9
-                        end)()
-                        u10 = u10 + 1
-                        debug.setupvalue(AC.attack, 5, u8)
-                        debug.setupvalue(AC.attack, 6, u9)
-                        debug.setupvalue(AC.attack, 4, u7)
-                        debug.setupvalue(AC.attack, 7, u10)
-                        pcall(function()
-                            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then
-                                AC.animator.anims.basic[1]:Play(0.01,0.01,0.01)
-                                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "")
-                            end
-                        end)
-                    end
-                end
-            end
-        end
-    end
+local CombatFramework = require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework"))
+	local CombatFrameworkR = getupvalues(CombatFramework)[2]
+	local RigController = require(game:GetService("Players")["LocalPlayer"].PlayerScripts.CombatFramework.RigController)
+	local RigControllerR = getupvalues(RigController)[2]
+	
+	function CurrentWeapon()
+		local ac = CombatFrameworkR.activeController
+		local ret = ac.blades[1]
+		if not ret then return game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name end
+		pcall(function()
+			while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
+		end)
+		if not ret then return game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name end
+		return ret
+	end
+	
+	function getAllBladeHitsPlayers(Sizes)
+		local Hits = {}
+		local Client = game.Players.LocalPlayer
+		local Characters = game:GetService("Workspace").Characters:GetChildren()
+		for i=1,#Characters do local v = Characters[i]
+			local Human = v:FindFirstChildOfClass("Humanoid")
+			if v.Name ~= game.Players.LocalPlayer.Name and Human and Human.RootPart and Human.Health > 0 and Client:DistanceFromCharacter(Human.RootPart.Position) < Sizes+5 then
+				table.insert(Hits,Human.RootPart)
+			end
+		end
+		return Hits
+	end
+	
+	function getAllBladeHits(Sizes)
+		local Hits = {}
+		local Client = game.Players.LocalPlayer
+		local Enemies = game:GetService("Workspace").Enemies:GetChildren()
+		for i=1,#Enemies do local v = Enemies[i]
+			local Human = v:FindFirstChildOfClass("Humanoid")
+			if Human and Human.RootPart and Human.Health > 0 and Client:DistanceFromCharacter(Human.RootPart.Position) < Sizes+5 then
+				table.insert(Hits,Human.RootPart)
+			end
+		end
+		return Hits
+	end
+	
+  function AttackNoCoolDown()
+		local ac = CombatFrameworkR.activeController
+		if ac and ac.equipped then
+			for indexincrement = 1, 1 do
+				local bladehit = getAllBladeHits(60)
+				if #bladehit > 0 then
+					local AcAttack8 = debug.getupvalue(ac.attack, 5)
+					local AcAttack9 = debug.getupvalue(ac.attack, 6)
+					local AcAttack7 = debug.getupvalue(ac.attack, 4)
+					local AcAttack10 = debug.getupvalue(ac.attack, 7)
+					local NumberAc12 = (AcAttack8 * 798405 + AcAttack7 * 727595) % AcAttack9
+					local NumberAc13 = AcAttack7 * 798405
+					(function()
+						NumberAc12 = (NumberAc12 * AcAttack9 + NumberAc13) % 1099511627776
+						AcAttack8 = math.floor(NumberAc12 / AcAttack9)
+						AcAttack7 = NumberAc12 - AcAttack8 * AcAttack9
+					end)()
+					AcAttack10 = AcAttack10 + 1 
+					debug.setupvalue(ac.attack, 5, AcAttack8)
+					debug.setupvalue(ac.attack, 6, AcAttack9)
+					debug.setupvalue(ac.attack, 4, AcAttack7)
+					debug.setupvalue(ac.attack, 7, AcAttack10)
+					for k, v in pairs(ac.animator.anims.basic) do
+						v:Play(0.01,0.01,0.01)
+					end                 
+					if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
+						game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
+						game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(NumberAc12 / 1099511627776 * 16777215), AcAttack10)
+						game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, indexincrement, "")
+					end
+				end
+			end
+		end
+	end
 
 
 
@@ -2527,9 +2542,9 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     DropdownDelayAttack:OnChanged(function(Value)
     _G.FastAttackFaiFao_Mode = Value
 	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
-		_G.Fast_Delay = 0.12
+		_G.Fast_Delay = 0.059
 	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.2
+		_G.Fast_Delay = 0.1
 	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
 		_G.Fast_Delay = 0.05
 	end
@@ -3164,9 +3179,8 @@ end
 end
 end)
 
-local MiscFarm = Tabs.Main:AddSection("Misc Farm")
-
 if Third_Sea then
+local MiscFarm = Tabs.Main:AddSection("Bone Farm")
 local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {
     Title = "Auto Bone",
     Description = "Cày Xương", 
@@ -3237,6 +3251,50 @@ spawn(function()
         end
     end
 end)
+
+local ToggleRandomBone = Tabs.Main:AddToggle("ToggleRandomBone", {Title = "Random Bone",Description = "Đổi xương", Default = false })
+ToggleRandomBone:OnChanged(function(Value)  
+		_G.AutoRandomBone = Value
+end)
+Options.ToggleRandomBone:SetValue(false)
+	
+spawn(function()
+	while wait(0.0000000000000000000000000000000000000000000000000001) do
+	if _G.AutoRandomBone then
+	local args = {
+	 [1] = "Bones",
+	 [2] = "Buy",
+	 [3] = 1,
+	 [4] = 1
+	}
+	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	end
+	end
+	end)
+end
+if Third_Sea then
+local MiscFarm = Tabs.Main:AddSection("Katakuri Farm")
+local Mob_Kill_Cake_Prince = Tabs.Main:AddParagraph({
+    Title = "Check Cake Mob",
+    Content = "Cake Prince:"
+})
+
+spawn(function()
+	while wait() do
+		pcall(function()
+			if string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 88 then
+				Mob_Kill_Cake_Prince:SetDesc("Kill : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41).."")
+			elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 87 then
+				Mob_Kill_Cake_Prince:SetDesc("Kill : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,40).."")
+			elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
+				Mob_Kill_Cake_Prince:SetDesc("Kill : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39).." ")
+			else
+				Mob_Kill_Cake_Prince:SetDesc("Cake Prince : 🟢yes")
+			end
+		end)
+	end
+end)
+
 
 local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {
     Title = "Auto Cake Prince",
@@ -3328,8 +3386,10 @@ spawn(function()
     end
   end
 end)
+end
 
     if Second_Sea then
+	local MiscFarm = Tabs.Main:AddSection("Ectoplasm Farm")
     local ToggleVatChatKiDi = Tabs.Main:AddToggle("ToggleVatChatKiDi", {
         Title = "Auto Ectoplasm",
         Description = "Cày vật Chất kì Dị", 
@@ -4018,8 +4078,26 @@ spawn(function()
       end)
 
 
+
     local AutoElite = Tabs.Main:AddSection("Elite Hunter Farm")
 
+    local StatusElite = Tabs.Main:AddParagraph({
+        Title = "Check Elite",
+        Content = "Status: "
+    })
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
+                    StatusElite:SetDesc("Elite Boss : 🟢yes | Killed:  "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))	
+                else
+                    StatusElite:SetDesc("Elite Boss : 🔴no | Killed: "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))	
+                end
+            end)
+        end
+    end)
+    
     local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter",Description = "Đánh Boss Bí Ẩn", Default = false })
 
     ToggleElite:OnChanged(function(Value)
@@ -4213,6 +4291,51 @@ ToggleAutoW:OnChanged(function(Value)
 
     local AutoMysticIsland = Tabs.Main:AddSection("Mirage Island")
 
+    local StatusMirage = Tabs.Main:AddParagraph({
+        Title = "Status",
+        Content = "Status:"
+    })
+    
+    task.spawn(function()
+    while task.wait() do
+    pcall(function()
+        if game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709149431" then
+           FullMoonStatus = "100%"
+        elseif game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709149052" then
+            FullMoonStatus = "75%"
+        elseif game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709143733" then
+            FullMoonStatus = "50%"
+        elseif game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709150401" then
+            FullMoonStatus = "25%"
+        elseif game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709149680" then
+            FullMoonStatus = "15%"
+        else
+            FullMoonStatus = "0%"
+        end
+    end)
+    end
+    end)
+    
+    task.spawn(function()
+        while task.wait() do
+            pcall(function()
+            if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
+                MirageStatus = "🟢yes"
+            else
+                MirageStatus = '🔴no'
+             end
+        end)
+     end
+    end)
+    
+    
+    spawn(function()
+        pcall(function()
+            while wait() do
+                StatusMirage:SetDesc("Mirage Island: "..MirageStatus.." | Full Moon: "..FullMoonStatus)
+            end
+        end)
+    end)
 
     Tabs.Main:AddButton({
         Title = "Tween to Mirage Island",
@@ -4488,7 +4611,6 @@ if Third_Sea then
                     end
                 end)
             end
-        end
 
 
 if Second_Sea then
@@ -6651,25 +6773,6 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
 
-local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Random Bone",Description = "Đổi xương", Default = false })
-ToggleRandomBone:OnChanged(function(Value)  
-		_G.AutoRandomBone = Value
-end)
-Options.ToggleRandomBone:SetValue(false)
-	
-spawn(function()
-	while wait(0.0000000000000000000000000000000000000000000000000001) do
-	if _G.AutoRandomBone then
-	local args = {
-	 [1] = "Bones",
-	 [2] = "Buy",
-	 [3] = 1,
-	 [4] = 1
-	}
-	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-	end
-	end
-	end)
 
 
 Tabs.Shop:AddButton({
@@ -7342,6 +7445,6 @@ Window:SelectTab(1)
 Fluent:Notify({
     Title = "Fai Fao Hub",
     Content = "The script has been loaded.",
-    Duration = 8
+    Durtion = 8
 })
 SaveManager:LoadAutoloadConfig()
