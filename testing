@@ -1,4 +1,3 @@
-----------------------------------------------------------------------------------------------------------------------------------------------
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -28,11 +27,11 @@ local Tabs = {
 local Options = Fluent.Options
 do
 --------------------------------------------------------------------------------------------------------------------------------------------
---Place Id Check
+--// Place Id Check
 local id = game.PlaceId
 if id == 2753915549 then First_Sea = true; elseif id == 4442272183 then Second_Sea = true; elseif id == 7449423635 then Third_Sea = true; else game:Shutdown() end;
 --------------------------------------------------------------------------------------------------------------------------------------------
---Flag Player
+--// Flag Player
 function AntiBan()
     for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
         if v:IsA("LocalScript") then
@@ -51,14 +50,14 @@ function AntiBan()
     end
     AntiBan()
 --------------------------------------------------------------------------------------------------------------------------------------------
---Anti AFK
+--// Anti AFK
 game:GetService("Players").LocalPlayer.Idled:connect(function()
 	game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 	wait(1)
 	game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
-------// BLOX FRUIT
---// Sea world
+-------------// BLOX FRUIT
+--// Sea World
 First_Sea = false
 Second_Sea = false
 Third_Sea = false
@@ -70,7 +69,6 @@ Second_Sea = true
 elseif placeId == 7449423635 then
 Third_Sea = true
 end
-
 --// Check Quest
 function CheckLevel()
 local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
@@ -2059,7 +2057,7 @@ end
     end
     if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health == 0 then
         if tween then tween:Cancel() end
-        repeat wait() until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > 0; wait(0.2)
+        repeat wait(_G.Fast_Delay) until game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health > 0; wait(0.2)
     end
     local tweenfunc = {}
     local Distance = (RealTarget.Position - game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position)
@@ -2080,7 +2078,7 @@ end
                 elseif game:GetService("Players")["LocalPlayer"].Data:FindFirstChild("LastSpawnPoint").Value == tostring(GetIsLand(RealTarget)) then
                     game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid"):ChangeState(15)
                     wait(0.1)
-                    repeat wait() until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0
+                    repeat wait(_G.Fast_Delay) until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0
                 else
                     if game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0 then
                         if fkwarp == false then
@@ -2090,7 +2088,7 @@ end
                     end
                     wait(.08)
                     game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid"):ChangeState(15)
-                    repeat wait() until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0
+                    repeat wait(_G.Fast_Delay) until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0
                     wait(.1)
                     Com("F_", "SetSpawnPoint")
                 end
@@ -2142,7 +2140,7 @@ end
 ---------
 
 function toTargetP(CFgo)
-	if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health <= 0 or not game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") then tween:Cancel() repeat wait() until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") and game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0 wait(7) return end
+	if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health <= 0 or not game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") then tween:Cancel() repeat wait(_G.Fast_Delay) until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") and game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0 wait(7) return end
 	if (game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude <= 150 then
 		pcall(function()
 			tween:Cancel()
@@ -2183,7 +2181,7 @@ end
     end
     
     function TweenBoat(CFgo)
-        if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health <= 0 or not game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") then tween:Cancel() repeat wait() until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") and game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0 wait(7) return end
+        if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health <= 0 or not game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") then tween:Cancel() repeat wait(_G.Fast_Delay) until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") and game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0 wait(7) return end
         local tween_s = game:service"TweenService"
         local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/325, Enum.EasingStyle.Linear)
         tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = CFgo})
@@ -2379,9 +2377,6 @@ local CombatFramework = require(game:GetService("Players").LocalPlayer.PlayerScr
 		end
 	end
 
-
-
-
 --Attack Mastery
     function NormalAttack()
         if not _G.NormalAttack then
@@ -2542,11 +2537,11 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     DropdownDelayAttack:OnChanged(function(Value)
     _G.FastAttackFaiFao_Mode = Value
 	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
-		_G.Fast_Delay = 0.059
+		_G.Fast_Delay = 0.079
 	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.1
+		_G.Fast_Delay = 0.15
 	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.05
+		_G.Fast_Delay = 0
 	end
 end)
 
@@ -2913,7 +2908,7 @@ spawn(function()
 				if v.Name:find("Chest") then
 					if game:GetService("Workspace"):FindFirstChild(v.Name) then
 						if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000+_G.MagnitudeAdd then
-							repeat wait()
+							repeat wait(_G.Fast_Delay)
 								if game:GetService("Workspace"):FindFirstChild(v.Name) then
 									Tween(v.CFrame)
 								end
@@ -3181,6 +3176,20 @@ end)
 
 if Third_Sea then
 local MiscFarm = Tabs.Main:AddSection("Bone Farm")
+
+local StatusBone = Tabs.Main:AddParagraph({
+    Title = "Bone Status",
+    Content = ""
+})
+	spawn(function()
+		pcall(function()
+			while wait() do
+				StatusBone:SetDesc("You Have : "..tostring(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Check").." Bones"))
+			end
+		end)
+	end)
+
+
 local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {
     Title = "Auto Bone",
     Description = "Cày Xương", 
@@ -3276,7 +3285,7 @@ if Third_Sea then
 local MiscFarm = Tabs.Main:AddSection("Katakuri Farm")
 local Mob_Kill_Cake_Prince = Tabs.Main:AddParagraph({
     Title = "Check Cake Mob",
-    Content = "Cake Prince:"
+    Content = ""
 })
 
 spawn(function()
@@ -3441,6 +3450,7 @@ end
 
 local boss = Tabs.Main:AddSection("Boss Farm")
 
+
     if First_Sea then
 		tableBoss = {"The Gorilla King","Bobby","Yeti","Mob Leader","Vice Admiral","Warden","Chief Warden","Swan","Magma Admiral","Fishman Lord","Wysper","Thunder God","Cyborg","Saber Expert"}
 	elseif Second_Sea then
@@ -3504,7 +3514,6 @@ local boss = Tabs.Main:AddSection("Boss Farm")
             end
         end
     end)
-
 
     local Material = Tabs.Main:AddSection("Material Farm")
 
@@ -3593,8 +3602,26 @@ local boss = Tabs.Main:AddSection("Boss Farm")
       end)
 
       if Third_Sea then
-      local RoughSea = Tabs.Main:AddSection("🦊 Kitsune 🦊")
-
+      local RoughSea = Tabs.Main:AddSection("Kitsune")
+	 
+local StatusKitsune = Tabs.Main:AddParagraph({
+    Title = "Kistune Island",
+    Content = ""
+})
+function UpdateKitsune()
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Kitsune Island') then
+        StatusKitsune:SetDesc("Kitsune Island : 🟢yes")
+    else
+        StatusKitsune:SetDesc("Kitsune Island : 🔴no")
+     end
+end
+spawn(function()
+    pcall(function()
+        while wait() do
+            UpdateKitsune()
+        end
+    end)
+end)
 
       local ToggleEspKitsune = Tabs.Main:AddToggle("ToggleEspKitsune", {Title = "Esp Kitsune Island",Description = "Định vị Đảo kisune", Default = false })
       ToggleEspKitsune:OnChanged(function(Value)
@@ -3716,7 +3743,7 @@ if Third_Sea then
                             else
                                 for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do
                                     if v.Name == "PirateGrandBrigade" then
-                                        repeat wait()
+                                        repeat wait(_G.Fast_Delay)
                                             if (CFrame.new(-17013.80078125, 10.962434768676758, 438.0169982910156).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                                 TweenShip(CFrame.new(-33163.1875, 10.964323997497559, -324.4842224121094))
                                             elseif (CFrame.new(-33163.1875, 10.964323997497559, -324.4842224121094).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
@@ -3790,7 +3817,7 @@ end)
 	local SetSpeedBoatSlider = Tabs.Main:AddSlider("SliderSpeedBoat", {
 	Title = "Set Speed boat",
 	Description = "Chỉnh tốc độ thuyền",
-	Default = 400,
+	Default = 300,
 	Min = 0,
 	Max = 1000,
 	Rounding = 1,
@@ -3803,7 +3830,7 @@ SetSpeedBoatSlider:OnChanged(function(value)
 	SetSpeedBoat = value
 end)
 
-SetSpeedBoatSlider:SetValue(400)
+SetSpeedBoatSlider:SetValue(300)
 
 local SpeedBoatToggle = Tabs.Main:AddToggle("SpeedBoat_Toggle", {Title = "Speed Boat",Description = "Tốc độ thuyền", Default = false })
 Options.SpeedBoat_Toggle:SetValue(false)
@@ -3822,8 +3849,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
     end
 end)
 
-	
-	
+
 
     local ToggleTerrorshark = Tabs.Main:AddToggle("ToggleTerrorshark", {Title = " Kill Terrorshark",Description = "Đánh Terrorshark", Default = false })
 
@@ -4296,7 +4322,7 @@ ToggleSeaBeAst:OnChanged(function(Value)
                                     if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
                                         TweenBoat(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
                                     elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == true then
-                                        repeat wait()
+                                        repeat wait(_G.Fast_Delay)
                                             if (game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                                 TweenShip(CFrame.new(35.04552459716797, 17.750778198242188, 4819.267578125))
                                             end
@@ -4307,7 +4333,7 @@ ToggleSeaBeAst:OnChanged(function(Value)
                                 for is,vs in pairs(game:GetService("Workspace").Boats:GetChildren()) do
                                     if vs.Name == "PirateGrandBrigade" then
                                         if vs:FindFirstChild("VehicleSeat") then
-                                            repeat wait()
+                                            repeat wait(_G.Fast_Delay)
                                                 game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
                                                 TweenBoat(vs.VehicleSeat.CFrame * CFrame.new(0,1,0))
                                             until not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") or _G.AutoSeaBeast == false
@@ -4319,7 +4345,7 @@ ToggleSeaBeAst:OnChanged(function(Value)
                             for iss,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do
                                 if v.Name == "PirateGrandBrigade" then
                                     if v:FindFirstChild("VehicleSeat") then
-                                        repeat wait()
+                                        repeat wait(_G.Fast_Delay)
                                             game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
                                             TweenBoat(v.VehicleSeat.CFrame * CFrame.new(0,1,0))
                                         until not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") or _G.AutoSeaBeast == false
@@ -4330,7 +4356,7 @@ ToggleSeaBeAst:OnChanged(function(Value)
                     elseif game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") then  
                         for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
                             if v:FindFirstChild("HumanoidRootPart") then
-                                repeat wait()
+                                repeat wait(_G.Fast_Delay)
                                     game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
                                     TweenBoat(v.HumanoidRootPart.CFrame * CFrame.new(0,500,0))
                                     EquipAllWeapon()  
@@ -5612,7 +5638,7 @@ function NoCooldown()
 				for i2,v2 in pairs(debug.getupvalues(v)) do
 					if type(v2) == 'table' then
 						if v2.LastUse then
-							repeat wait()
+							repeat wait(_G.Fast_Delay)
 								setupvalue(v, i2, {LastAfter = 0,LastUse = 0})
 							until not _G.SoruNoCd
 						end
