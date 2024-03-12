@@ -4790,7 +4790,6 @@ local SettingFarm = Tabs.Setting:AddSection("Farming")
         _G.BringMob = Value
     end)
     Options.ToggleBringMob:SetValue(true)
-    --[[
         spawn(function()
             while wait() do
                 pcall(function()
@@ -4826,7 +4825,6 @@ local SettingFarm = Tabs.Setting:AddSection("Farming")
                             end)
                     end
                 end)
-            ]]
 
             task.spawn(function()
                 while task.wait() do
