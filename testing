@@ -2794,137 +2794,17 @@ end)
         end)
 
 
---------------------------------------------------------------------------------------------------------------------------------------------
+--// auto chest
 
-game:GetService('RunService').RenderStepped:connect(function()           
-    if _G.chestsea3 then
-   if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("God's Chalice") then 
-  _G.chestsea3 = false                      
-   elseif not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("God's Chalice") then 
-     if game:GetService("Workspace"):FindFirstChild("Chest1") then
-    TPchest( game:GetService("Workspace"):FindFirstChild("Chest1").CFrame)
+Tabs.Main:AddButton({
+    Title = "Auto Chest",
+    Description = "Nhặt rương",
+    Callback = function()
+        _G.JoinTeam = "Pirates"
+        _G.Stop_If_Has_Items = true
+        loadstring(game:HttpGet("https://github.com/PNguyen0199/Script/raw/main/Trash_Auto_Chest.lua"))()
     end
-    if game:GetService("Workspace"):FindFirstChild("Chest2") then
-    TPchest( game:GetService("Workspace"):FindFirstChild("Chest2").CFrame)
-    end
-    if game:GetService("Workspace"):FindFirstChild("Chest3") then
-TPchest( game:GetService("Workspace"):FindFirstChild("Chest3").CFrame)
-end
-end
-end
-end)
-if game.PlaceId == 7449423635 then -- sea3
-spawn(function()
-   while task.wait(3.5) do
-       pcall(function()
-       if not   game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("God's Chalice") then
-           if _G.chestsea3 then
-               game:GetService("VirtualInputManager"):SendKeyEvent(true,"Q",false,game)
-           game.Players.LocalPlayer.Character.Humanoid.Health = 0
-           end
-           wait(5)
-          end 
-        end)
-     end
-     end) 
-    end
-game:GetService('RunService').RenderStepped:connect(function()           
-    if _G.chestsea2 then
-   if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fist of Darkness") then 
-       game:GetService("VirtualInputManager"):SendKeyEvent(true,"Q",false,game)
-  _G.chestsea2 = false                         
-   elseif not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fist of Darkness") then 
-     if game:GetService("Workspace"):FindFirstChild("Chest1") then
-    TPchest( game:GetService("Workspace"):FindFirstChild("Chest1").CFrame)
-    end
-    if game:GetService("Workspace"):FindFirstChild("Chest2") then
-    TPchest( game:GetService("Workspace"):FindFirstChild("Chest2").CFrame)
-    end
-    if game:GetService("Workspace"):FindFirstChild("Chest3") then
-TPchest( game:GetService("Workspace"):FindFirstChild("Chest3").CFrame)
-end
-end
-end
-end)
-if game.PlaceId == 4442272183 then -- sea2
-spawn(function()
-   while task.wait(3.5) do
-       pcall(function()
-       if not   game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fist of Darkness") then
-           if _G.chestsea2 then
-           game.Players.LocalPlayer.Character.Humanoid.Health = 0
-           end
-           wait(5)
-          end 
-        end) 
-    end 
-end) 
-end
-           
-function TPchest(P1)          
-            local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-              if Distance >= 0 then
-                Speed = 1200000
-                end
-                local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Distance/Speed), {CFrame = P1  }) tween:Play()                                    
-             end
-
-
-if Third_Sea then
-local ToggleChest = Tabs.Main:AddToggle("ToggleChest", {
-    Title = "Auto Chest Stop If Has Items [Tp]",
-    Description = "Nhặt Rương dừng Khi Có Vật Phẩm [Tp]", 
-    Default = false })
-ToggleChest:OnChanged(function(Value)
-    _G.chestsea3 = Value
-end)
-Options.ToggleChest:SetValue(false)
-end
-
-if Second_Sea then
-local ToggleChest = Tabs.Main:AddToggle("ToggleChest", {
-    Title = "Auto Chest Stop If Has Items [Tp]",
-    Description = "Nhặt Rương dừng Khi Có Vật Phẩm [Tp]", 
-    Default = false })
-ToggleChest:OnChanged(function(Value)
-    _G.chestsea2 = Value
-end)
-Options.ToggleChest:SetValue(false)
-end
-
-local ToggleChestTween = Tabs.Main:AddToggle("ToggleChestTween", {
-    Title = "Auto Chest [Tween]",
-    Description = "Nhặt Rương [Bay]", 
-    Default = false })
-ToggleChestTween:OnChanged(function(Value)
-    AutoFarmChest = Value
-end)
-Options.ToggleChestTween:SetValue(false)
-_G.MagnitudeAdd = 0
-spawn(function()
-	while wait() do 
-		if AutoFarmChest then
-			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do 
-				if v.Name:find("Chest") then
-					if game:GetService("Workspace"):FindFirstChild(v.Name) then
-						if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000+_G.MagnitudeAdd then
-							repeat wait(_G.Fast_Delay)
-								if game:GetService("Workspace"):FindFirstChild(v.Name) then
-									Tween(v.CFrame)
-								end
-							until AutoFarmChest == false or not v.Parent
-							Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-							_G.MagnitudeAdd = _G.MagnitudeAdd+1500
-							break
-						end
-					end
-				end
-			end
-		end
-	end
-end)
-
-----------------------------------------------------------------------------------------------------------------------------------------------
+})
 
       Tabs.Main:AddButton({
         Title = "Redeem All Code",
