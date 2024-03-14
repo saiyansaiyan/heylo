@@ -6113,7 +6113,24 @@ spawn(function()
     end)
 end)
 
-local ToggleCollect = Tabs.Fruit:AddToggle("ToggleCollect", {Title = "Collect Devil Fruit",Description = "Nhặt Trái", Default = false })
+local ToggleCollectTP = Tabs.Fruit:AddToggle("ToggleCollectTP", {Title = "Collect Devil Fruit (TP)",Description = "Nhặt Trái", Default = false })
+ToggleCollectTP:OnChanged(function(Value)
+    _G.CollectFruitTP = Value
+end)
+Options.ToggleCollectTP:SetValue(false)
+spawn(function()
+		while wait(.1) do
+			if _G.CollectFruitTP then
+					for i,v in pairs(game.Workspace:GetChildren()) do
+						if string.find(v.Name, "Fruit") then
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Handle.CFrame
+						end
+					end
+				end
+            end
+       end)
+
+local ToggleCollect = Tabs.Fruit:AddToggle("ToggleCollect", {Title = "Collect Devil Fruit (Tween)",Description = "Nhặt Trái", Default = false })
 ToggleCollect:OnChanged(function(Value)
     _G.Tweenfruit = Value
 end)
