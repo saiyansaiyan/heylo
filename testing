@@ -2345,7 +2345,7 @@ spawn(function()
     while task.wait() do
     for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"]:GetChildren()) do
     pcall(function()
-      if v.Name == ("CurvedRing") or v.Name == ("SlashHit") or v.Name == ("SwordSlash") or v.Name == ("SlashTail") or v.Name == ("Sounds") then
+      if v.Name == ("CurvedRing") or v.Name == ("SwordSlash") or v.Name == ("SlashTail") or v.Name == ("Sounds") then
       v:Destroy()
       end
       end)
