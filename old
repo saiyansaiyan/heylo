@@ -6447,7 +6447,7 @@ end
 
 --------------Raid
 
-local Chips = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"}
+local Chips = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Buddha","Sand","Phoenix","Dough"}
 
 Raid:Dropdown('Select Raid',Chips,function(selchipf)
     SelectChip = selchipf
