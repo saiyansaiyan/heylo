@@ -2545,6 +2545,7 @@ local InputAttack = Tabs.Main:AddInput("InputAttack", {
     Finished = true, -- Only calls callback when you press enter
     Callback = function(Value)
         getgenv().Fast_Delay = Value
+        getgenv().DelayFastLow = Value
     end
 })
 InputAttack:OnChanged(function(Value)
@@ -4807,8 +4808,6 @@ ToggleFastLow:OnChanged(function(Value)
     getgenv().FastNelow = Value
 end)
 Options.ToggleFastLow:SetValue(false)
-getgenv().DelayFastLow = 0.13
-
 local CurveFrame = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework")))[2]
 local VirtualUser = game:GetService("VirtualUser")
 local RigControllerR = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.RigController))[2]
