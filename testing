@@ -2536,28 +2536,22 @@ end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
 local Farming = Tabs.Main:AddSection("Farming")
-local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
-
-    local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
-        Title = "Select Fast Attack",
-        Description = "Chọn Tốc Độ Đánh",
-        Values = listfastattack,
-        Multi = false,
-        Default = 1,
-    })
-    DropdownDelayAttack:SetValue("Fast Attack")
-    DropdownDelayAttack:OnChanged(function(Value)
-    getgenv().FastAttackFaiFao_Mode = Value
-	if getgenv().FastAttackFaiFao_Mode == "Fast Attack" then
-		getgenv().Fast_Delay = 0.1
-	elseif getgenv().FastAttackFaiFao_Mode == "Normal Attack" then
-		getgenv().Fast_Delay = 0.15
-	elseif getgenv().FastAttackFaiFao_Mode == "Super Fast Attack" then
-		getgenv().Fast_Delay = 0
-	end
+local InputAttack = Tabs.Main:AddInput("InputAttack", {
+    Title = "Delay Attack",
+    Description = "Nhập Tốc Độ Đánh",
+    Default = 0.1,
+    Placeholder = "Input",
+    Numeric = true, -- Only allows numbers
+    Finished = true, -- Only calls callback when you press enter
+    Callback = function(Value)
+        getgenv().Fast_Delay = Value
+    end
+})
+InputAttack:OnChanged(function(Value)
+	getgenv().Fast_Delay = Value
 end)
 
-    local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
+local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
         Title = "Weapon",
         Description = "Chọn Vũ Khí",
         Values = {'Melee','Sword','Blox Fruit'},
