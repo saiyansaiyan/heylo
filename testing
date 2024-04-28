@@ -1,17 +1,17 @@
-local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/ThundarZ/Welcome/main/Main/UI/Fluent/Library.lua"))()
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Fai Fao Hub",
-    SubTitle = "Blox Fruits",
+    Title = "Fai Fao Hub | Blox Fruits",
+    SubTitle = "",
     TabWidth = 155,
     Size = UDim2.fromOffset(500, 320),
-    Acrylic = false,
-    Theme = "Aqua",
-    MinimizeKey = Enum.KeyCode.End
+    Acrylic = true,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl
 })
-print("Fai Fao Loading...")
+print("Script Loading...")
 local Tabs = {
     Main = Window:AddTab({ Title = "+ Farming", Icon = "" }),
     Setting = Window:AddTab({ Title = "+ Settings", Icon = "" }),
@@ -2076,7 +2076,7 @@ end
         Speed = 300
     end
     if BypassTP then
-        if Distance > 3000 and not AutoNextIsland and not (game.Players.LocalPlayer.Backpack:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Character:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Sweet Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sweet Chalice")) and not (Name == "Fishman Commando" or Name == "Fishman Warrior") then
+        if Distance > 3000 and not getgenv().AutoNextIsland and not (game.Players.LocalPlayer.Backpack:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Character:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Sweet Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sweet Chalice")) and not (Name == "Fishman Commando" or Name == "Fishman Warrior") then
             pcall(function()
                 tween:Cancel()
                 fkwarp = false
@@ -2267,7 +2267,7 @@ spawn(function()
    spawn(function()
 			while task.wait() do
 				pcall(function()
-					if getgenv().TeleportIsland or getgenv().AutoEvoRace or AutoFarmChest or getgenv().chestsea2 or getgenv().chestsea3 or getgenv().CastleRaid or getgenv().CollectAzure or getgenv().TweenToKitsune or getgenv().AutoCandy or getgenv().GhostShip or getgenv().Ship or getgenv().SailBoat or getgenv().Auto_Holy_Torch or getgenv().FindMirageIsland or getgenv().TeleportPly or getgenv().Tweenfruit or getgenv().AutoFishCrew or getgenv().AutoShark or getgenv().AutoCakeV2 or getgenv().AutoMysticIsland or getgenv().AutoQuestRace or getgenv().AutoBuyBoat or getgenv().dao or getgenv().AutoMirage or AutoFarmAcient or getgenv().AutoQuestRace or Auto_Law or getgenv().AutoAllBoss or AutoTushita or getgenv().AutoHolyTorch or getgenv().AutoTerrorshark or getgenv().farmpiranya or getgenv().DriveMytic or getgenv().AutoCakeV2V2 or PirateShip or getgenv().AutoSeaBeast or getgenv().AutoNear or getgenv().BossRaid or getgenv().GrabChest or AutoCitizen or getgenv().Ectoplasm or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or getgenv().AutoLevel or getgenv().Clip2 or AutoFarmNoQuest or getgenv().AutoBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or getgenv().AutoBoss or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or getgenv().CakePrince or getgenv().AutoElite or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or getgenv().AutoKillPlayerMelee or getgenv().AutoKillPlayerGun or getgenv().AutoKillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or getgenv().AutoMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or getgenv().Factory or getgenv().SwanGlasses or AutoBartilo or AutoEvoRace or getgenv().Ectoplasm then
+					if getgenv().TeleportIsland or getgenv().AutoEvoRace or AutoFarmChest or getgenv().chestsea2 or getgenv().chestsea3 or getgenv().CastleRaid or getgenv().CollectAzure or getgenv().TweenToKitsune or getgenv().AutoCandy or getgenv().GhostShip or getgenv().Ship or getgenv().SailBoat or getgenv().Auto_Holy_Torch or getgenv().FindMirageIsland or getgenv().TeleportPly or getgenv().Tweenfruit or getgenv().AutoFishCrew or getgenv().AutoShark or getgenv().AutoCakeV2 or getgenv().AutoMysticIsland or getgenv().AutoQuestRace or getgenv().AutoBuyBoat or getgenv().dao or getgenv().AutoMirage or getgenv().AutoFarmAcient or getgenv().AutoQuestRace or getgenv().Auto_Law or getgenv().AutoAllBoss or AutoTushita or getgenv().AutoHolyTorch or getgenv().AutoTerrorshark or getgenv().farmpiranya or getgenv().DriveMytic or getgenv().AutoCakeV2V2 or PirateShip or getgenv().AutoSeaBeast or getgenv().AutoNear or getgenv().BossRaid or getgenv().GrabChest or AutoCitizen or getgenv().Ectoplasm or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or getgenv().AutoLevel or getgenv().Clip2 or AutoFarmNoQuest or getgenv().AutoBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or getgenv().AutoBoss or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or getgenv().CakePrince or getgenv().AutoElite or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or getgenv().AutoKillPlayerMelee or getgenv().AutoKillPlayerGun or getgenv().AutoKillPlayerFruit or AutoDungeon or getgenv().AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or getgenv().AutoMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or getgenv().Factory or getgenv().SwanGlasses or AutoBartilo or AutoEvoRace or getgenv().Ectoplasm then
 						if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
 							local Noclip = Instance.new("BodyVelocity")
 							Noclip.Name = "BodyClip"
@@ -2287,7 +2287,7 @@ spawn(function()
 spawn(function()
   pcall(function()
     game:GetService("RunService").Stepped:Connect(function()
-      if getgenv().TeleportIsland or getgenv().AutoEvoRace or getgenv().CastleRaid or AutoFarmChest or getgenv().CollectAzure or getgenv().TweenToKitsune or getgenv().AutoCandy or getgenv().GhostShip or getgenv().Ship or getgenv().SailBoat or getgenv().Auto_Holy_Torch or getgenv().Tweenfruit or getgenv().FindMirageIsland or getgenv().TeleportPly or getgenv().AutoFishCrew or getgenv().AutoShark or getgenv().AutoMysticIsland or getgenv().AutoCakeV2 or getgenv().AutoQuestRace or getgenv().AutoBuyBoat or getgenv().dao or AutoFarmAcient or getgenv().AutoMirage or Auto_Law or getgenv().AutoQuestRace or getgenv().AutoAllBoss or getgenv().AutoHolyTorch or AutoTushita or getgenv().farmpiranya or getgenv().AutoTerrorshark or getgenv().AutoNear or getgenv().AutoCakeV2V2 or PirateShip or getgenv().AutoSeaBeast or getgenv().DriveMytic or getgenv().BossRaid or getgenv().GrabChest or AutoCitizen or getgenv().Ectoplasm or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or getgenv().AutoLevel or getgenv().Clip2 or AutoFarmNoQuest or getgenv().AutoBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or getgenv().AutoBoss or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or getgenv().CakePrince or getgenv().AutoElite or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or getgenv().AutoKillPlayerMelee or getgenv().AutoKillPlayerGun or getgenv().AutoKillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or getgenv().AutoMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or getgenv().Factory or getgenv().SwanGlasses or AutoBartilo or AutoEvoRace or getgenv().Ectoplasm then
+      if getgenv().TeleportIsland or getgenv().AutoEvoRace or getgenv().CastleRaid or AutoFarmChest or getgenv().CollectAzure or getgenv().TweenToKitsune or getgenv().AutoCandy or getgenv().GhostShip or getgenv().Ship or getgenv().SailBoat or getgenv().Auto_Holy_Torch or getgenv().Tweenfruit or getgenv().FindMirageIsland or getgenv().TeleportPly or getgenv().AutoFishCrew or getgenv().AutoShark or getgenv().AutoMysticIsland or getgenv().AutoCakeV2 or getgenv().AutoQuestRace or getgenv().AutoBuyBoat or getgenv().dao or getgenv().AutoFarmAcient or getgenv().AutoMirage or getgenv().Auto_Law or getgenv().AutoQuestRace or getgenv().AutoAllBoss or getgenv().AutoHolyTorch or AutoTushita or getgenv().farmpiranya or getgenv().AutoTerrorshark or getgenv().AutoNear or getgenv().AutoCakeV2V2 or PirateShip or getgenv().AutoSeaBeast or getgenv().DriveMytic or getgenv().BossRaid or getgenv().GrabChest or AutoCitizen or getgenv().Ectoplasm or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or getgenv().AutoLevel or getgenv().Clip2 or AutoFarmNoQuest or getgenv().AutoBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or getgenv().AutoBoss or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or getgenv().CakePrince or getgenv().AutoElite or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or getgenv().AutoKillPlayerMelee or getgenv().AutoKillPlayerGun or getgenv().AutoKillPlayerFruit or AutoDungeon or getgenv().AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or getgenv().AutoMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or getgenv().Factory or getgenv().SwanGlasses or AutoBartilo or AutoEvoRace or getgenv().Ectoplasm then
       for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
       if v:IsA("BasePart") then
       v.CanCollide = false
@@ -2521,7 +2521,7 @@ ImageButton1.Size = UDim2.new(0, 50, 0, 50)
 ImageButton1.Draggable = true
 ImageButton1.Image = "rbxassetid://16024431693"
 ImageButton1.MouseButton1Down:connect(function()
-    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.LeftControl,false,game)
 end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Remove Effect
@@ -5149,9 +5149,8 @@ SliderPosZ:OnChanged(function(Value)
 end)
 SliderPosZ:SetValue(15)
 
+local Ui = Tabs.Setting:AddSection("Config UI")
 --------------------------------------------------------------------------------------------------------------------------------------------
-
-
 --Stats
 local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Melee",Description = "Nâng Melee", Default = false })
 ToggleMelee:OnChanged(function(Value)
@@ -5159,15 +5158,11 @@ ToggleMelee:OnChanged(function(Value)
     end)
 Options.ToggleMelee:SetValue(false)
 
-
-
 local ToggleDe = Tabs.Stats:AddToggle("ToggleDe", {Title = "Auto Defense",Description = "Nâng Máu", Default = false })
 ToggleDe:OnChanged(function(Value)
     getgenv().Auto_Stats_Defense = Value
     end)
 Options.ToggleDe:SetValue(false)
-
-
 
 local ToggleSword = Tabs.Stats:AddToggle("ToggleSword", {Title = "Auto Sword",Description = "Nâng Kiếm", Default = false })
 ToggleSword:OnChanged(function(Value)
@@ -5175,22 +5170,17 @@ ToggleSword:OnChanged(function(Value)
     end)
 Options.ToggleSword:SetValue(false)
 
-
-
 local ToggleGun = Tabs.Stats:AddToggle("ToggleGun", {Title = "Auto Gun", Description = "Nâng Súng",Default = false })
 ToggleGun:OnChanged(function(Value)
     getgenv().Auto_Stats_Gun = Value
     end)
 Options.ToggleGun:SetValue(false)
 
-
 local ToggleFruit = Tabs.Stats:AddToggle("ToggleFruit", {Title = "Auto Demon Fruit",Description = "Nâng Trái Ác Quỷ", Default = false })
 ToggleFruit:OnChanged(function(Value)
     getgenv().Auto_Stats_Devil_Fruit = Value
     end)
 Options.ToggleFruit:SetValue(false)
-
-
 spawn(function()
     while wait() do
         if getgenv().Auto_Stats_Devil_Fruit then
@@ -5248,7 +5238,6 @@ spawn(function()
     end
 end)
 
-
 spawn(function()
     while wait() do
         if getgenv().Auto_Stats_Melee then
@@ -5283,18 +5272,6 @@ SelectedPly:OnChanged(function(Value)
     getgenv().SelectPly = Value
 end)
 
-
-Tabs.Player:AddButton({
-    Title = "Refresh Player",
-    Description = "Làm Mới Người Chơi",
-    Callback = function()
-        table.clear(Playerslist)
-        for i,v in pairs(game:GetService("Players"):GetChildren()) do
-            table.insert(Playerslist,v.Name)
-        end
-    end
-})
-
 local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport To Player", Description = "Bay Đến Người Chơi",Default = false })
 ToggleTeleport:OnChanged(function(Value)
     getgenv().TeleportPly = Value
@@ -5319,9 +5296,6 @@ spawn(function()
 	end
 end)
 
-
-
-
 local ToggleQuanSat = Tabs.Player:AddToggle("ToggleQuanSat", {Title = "Spectate Player",Description = "Quan sát Người Chơi", Default = false })
 ToggleQuanSat:OnChanged(function(Value)
     SpectatePlys = Value
@@ -5335,10 +5309,6 @@ end)
 Options.ToggleQuanSat:SetValue(false)
 
 
-
-
-
-
 local ToggleFastAttack = Tabs.Player:AddToggle("ToggleFastAttack", {Title = " Click Attack Player",Description = "Đánh Người Chơi", Default = false })
 
 ToggleFastAttack:OnChanged(function(Value)
@@ -5346,14 +5316,12 @@ ToggleFastAttack:OnChanged(function(Value)
 end)
 Options.ToggleFastAttack:SetValue(false)
 
-
-
 local SliderDelayAttackPlayer = Tabs.Player:AddSlider("SliderDelayAttackPlayer", {
     Title = "Delay Fast (sec)",
     Description = "Tốc độ Đánh (giây)",
     Default = 0.1,
     Min = 0,
-    Max = 5,
+    Max = 1,
     Rounding = 1,
     Callback = function(Value)
        getgenv().DelayAttackPlayer = Value
@@ -5379,8 +5347,6 @@ end
 end)
 local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
 Camera:Stop()
-
-
 function getAllBladeHitsPlayers(Sizes)
 	local Hits = {}
 	local Client = game.Players.LocalPlayer
@@ -5408,11 +5374,9 @@ function getAllBladeHits(Sizes)
 end
 
 local Teleport = Tabs.Player:AddSection("Combat")
-
-
 local SlidershowFov = Tabs.Player:AddSlider("SlidershowFov", {
     Title = "Size Fov",
-    Description = "Cỡ Fov",
+    Description = "Kích Cỡ Fov",
     Default = 100,
     Min = 0,
     Max = 500,
@@ -5482,7 +5446,6 @@ spawn(function()
 	end)
 end)
 
-
 local Circle = Drawing.new("Circle")
 Circle.Color =  Color3.fromRGB(0, 244, 0)
 Circle.Thickness = 1
@@ -5503,13 +5466,10 @@ game:GetService("RunService").Stepped:Connect(function()
     end
 end)
 
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Mastery = Tabs.Player:AddSection("Misc")
 
-
-local ToggleNoClip = Tabs.Player:AddToggle("ToggleNoClip", {Title = "No Clip",Description = "Xuyên Tường", Default = false })
+local ToggleNoClip = Tabs.Player:AddToggle("ToggleNoClip", {Title = "No Clip",Description = "Đi Xuyên Tường", Default = false })
 ToggleNoClip:OnChanged(function(value)
     getgenv().LOf = value
 end)
@@ -5528,8 +5488,7 @@ spawn(function()
     end)
 end)
 
-
-local ToggleWalkonWater = Tabs.Player:AddToggle("ToggleWalkonWater", {Title = "Walk on Water",Description = "Đi Trên nước", Default = true })
+local ToggleWalkonWater = Tabs.Player:AddToggle("ToggleWalkonWater", {Title = "Walk on Water",Description = "Đi Trên Nước", Default = true })
 ToggleWalkonWater:OnChanged(function(Value)
   getgenv().WalkonWater = Value
 end)
@@ -5546,10 +5505,9 @@ spawn(function()
   end
 end)
 
-
 local ToggleSpeedRun = Tabs.Player:AddToggle("ToggleSpeedRun", {Title = "Run Speed",Description = "Chạy Nhanh", Default = true })
 ToggleSpeedRun:OnChanged(function(Value)
-    InfAbility = Value
+    getgenv().RunSpeed = Value
     if Value == false then
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
     end
@@ -5557,13 +5515,13 @@ end)
 Options.ToggleSpeedRun:SetValue(true)
 spawn(function()
     while wait() do
-        if InfAbility then
+        if getgenv().RunSpeed then
             InfAb()
         end
     end
 end)
 function InfAb()
-    if InfAbility then
+    if getgenv().RunSpeed then
         if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
             local inf = Instance.new("ParticleEmitter")
             inf.Acceleration = Vector3.new(0,0,0)
@@ -5618,148 +5576,6 @@ spawn(function()
       end
   end)
 end)
-
-
---[[
-local ToggleSoruNOCD = Tabs.Player:AddToggle("ToggleSoruNOCD", {Title = "Soru No Cooldown", Default = false })
-ToggleSoruNOCD:OnChanged(function(Value)
-    getgenv().SoruNoCd = Value
-	NoCooldown()
-end)
-Options.ToggleSoruNOCD:SetValue(false)
-function NoCooldown()
-	for i,v in next, getgc() do
-		if typeof(v) == "function" then
-			if getfenv(v).script == game.Players.LocalPlayer.Character:WaitForChild("Dodge") and getgenv().DashNoCd then
-				for i2,v2 in next, getupvalues(v) do
-					if tostring(v2) == "0.4" then
-						repeat wait(.1)
-							setupvalue(v,i2,0)
-						until not getgenv().DashNoCd
-					end
-				end
-			end
-			if getfenv(v).script == game.Players.LocalPlayer.Character:WaitForChild("Geppo") and getgenv().GeppoNoCd then
-				for i2,v2 in next, getupvalues(v) do
-					if tostring(v2) == "0" then
-						repeat wait(.1)
-							setupvalue(v,i2,0)
-						until not getgenv().GeppoNoCd
-					end
-				end
-			end
-			if getfenv(v).script == game.Players.LocalPlayer.Character:WaitForChild("Soru") and getgenv().SoruNoCd then
-				for i2,v2 in pairs(debug.getupvalues(v)) do
-					if type(v2) == 'table' then
-						if v2.LastUse then
-							repeat wait(getgenv().Fast_Delay)
-								setupvalue(v, i2, {LastAfter = 0,LastUse = 0})
-							until not getgenv().SoruNoCd
-						end
-					end
-				end
-			end
-		end
-	end
-end
---------------------------------------------------------------------------------------------------------------------------------------------
-local ToggleGeppoNoCD = Tabs.Player:AddToggle("ToggleGeppoNoCD", {Title = "Geppo No Cooldown", Default = false })
-ToggleGeppoNoCD:OnChanged(function(Value)
-    getgenv().GeppoNoCd = Value
-		NoCooldown()
-end)
-Options.ToggleGeppoNoCD:SetValue(false)
---------------------------------------------------------------------------------------------------------------------------------------------
-local ToggleDashNoCD = Tabs.Player:AddToggle("ToggleDashNoCD", {Title = "Dash No Cooldown", Default = false })
-ToggleDashNoCD:OnChanged(function(Value)
-    getgenv().DashNoCd = Value
-    DodgeNoCoolDown()
-end)
-Options.ToggleDashNoCD:SetValue(false)
-function DodgeNoCoolDown()
-    if getgenv().DashNoCd then
-        for i, v in next, getgc() do
-            if game.Players.LocalPlayer.Character.Dodge then
-                if typeof(v) == "function" and getfenv(v).script == game.Players.LocalPlayer.Character.Dodge then
-                    for i2, v2 in next, getupvalues(v) do
-                        if tostring(v2) == "0.4" then
-                            repeat
-                                wait(.1)
-                                setupvalue(v, i2, 0)
-                            until not getgenv().DashNoCd
-                        end
-                    end
-                end
-            end
-        end
-    end
-end
-
---------------------------------------------------------------------------------------------------------------------------------------------
-local ToggleSpeedHack = Tabs.Player:AddToggle("ToggleSpeedHack", {Title = "Speed Hack", Default = true })
-ToggleSpeedHack:OnChanged(function(Value)
-    getgenv().SpeedHack = Value
-    InfAbility()
-end)
-Options.ToggleSpeedHack:SetValue(true)
-
-function InfAbility()
-    if getgenv().SpeedHack then
-        if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
-            local inf = Instance.new("ParticleEmitter")
-            inf.Acceleration = Vector3.new(0, 0, 0)
-            inf.Archivable = true
-            inf.Drag = 20
-            inf.EmissionDirection = Enum.NormalId.Top
-            inf.Enabled = true
-            inf.Lifetime = NumberRange.new(0.2, 0.2)
-            inf.LightInfluence = 0
-            inf.LockedToPart = true
-            inf.Name = "Agility"
-            inf.Rate = 500
-            local numberKeypoints2 = {
-                NumberSequenceKeypoint.new(0, 0),
-                NumberSequenceKeypoint.new(1, 4),
-            }
-
-            inf.Size = NumberSequence.new(numberKeypoints2)
-            inf.RotSpeed = NumberRange.new(999, 9999)
-            inf.Rotation = NumberRange.new(0, 0)
-            inf.Speed = NumberRange.new(30, 30)
-            inf.SpreadAngle = Vector2.new(360, 360)
-            inf.Texture = "rbxassetid://243098098"
-            inf.VelotyInheritance = 0
-            inf.ZOffset = 2
-            inf.Transparency = NumberSequence.new(0)
-            inf.Color = ColorSequence.new(Color3.fromRGB(0, 255, 255), Color3.fromRGB(0, 255, 255))
-            inf.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-        end
-    else
-        if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility") then
-            game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
-        end
-    end
-end
-
---------------------------------------------------------------------------------------------------------------------------------------------
-local ToggleWalkOnWater = Tabs.Player:AddToggle("ToggleWalkOnWater", {Title = "Wakl On Water", Default = true })
-ToggleWalkOnWater:OnChanged(function(Value)
-    getgenv().WalkWater = Value
-end)
-Options.ToggleWalkOnWater:SetValue(true)
- 
-spawn(function()
-    while task.wait() do
-        pcall(function()
-            if getgenv().WalkWater then
-                game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,112,1000)
-            else
-                game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
-            end
-        end)
-    end
-end)
-]]
 -----------------------------------------------------------------------------------------------------------------------------------------------
 --Teleport
 local Teleport = Tabs.Teleport:AddSection("Teleport World")
@@ -5771,9 +5587,6 @@ Tabs.Teleport:AddButton({
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
     end
 })
-
-
-
 Tabs.Teleport:AddButton({
     Title = "Second Sea",
     Description = "Sea 2",
@@ -5782,8 +5595,6 @@ Tabs.Teleport:AddButton({
     end
 })
 
-
-
 Tabs.Teleport:AddButton({
     Title = "Third Sea",
     Description = "Sea 3",
@@ -5791,9 +5602,6 @@ Tabs.Teleport:AddButton({
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
     end
 })
-
-
-
 local Mastery = Tabs.Teleport:AddSection("Teleport Island")
 
 if First_Sea then
@@ -5865,7 +5673,7 @@ local DropdownIsland = Tabs.Teleport:AddDropdown("DropdownIsland",{
     Default = 1,
 })
 
-DropdownIsland:SetValue("...")
+DropdownIsland:SetValue("")
 DropdownIsland:OnChanged(function(Value)
     getgenv().SelectIsland = Value
 end)
@@ -5997,7 +5805,7 @@ for i,v in next,Remote_GetFruits do
         table.insert(ShopDevilSell,v.Name)
     end
 end
-getgenv().SelectFruit = "Leopard-Leopard"
+getgenv().SelectFruit = "Kitsune-Kitsune"
 
 local DropdownFruit = Tabs.Fruit:AddDropdown("DropdownFruit", {
     Title = "Select Fruit",
@@ -6012,7 +5820,6 @@ DropdownFruit:SetValue("...")
 DropdownFruit:OnChanged(function(Value)
     getgenv().SelectFruit = Value
 end)
-
 
 local ToggleFruit = Tabs.Fruit:AddToggle("ToggleFruit", {Title = "Buy Fruit Sniper",Description = "Mua Trái ác quỷ", Default = false })
 ToggleFruit:OnChanged(function(Value)
@@ -6054,8 +5861,8 @@ spawn(function()
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Spring Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Spring Fruit") then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Spring-Spring",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Spring Fruit"))
                     end
-                    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rocket Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kilo Fruit") then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Rocket-Rocket",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kilo Fruit"))
+                    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rocket Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rocket Fruit") then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Rocket-Rocket",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rocket Fruit"))
                     end
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Smoke Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Smoke Fruit") then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Smoke-Smoke",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Smoke Fruit"))
@@ -6078,8 +5885,8 @@ spawn(function()
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dark Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dark Fruit") then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Dark-Dark",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dark Fruit"))
                     end
-                    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Ghost Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Revive Fruit") then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Ghost-Ghost",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Revive Fruit"))
+                    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Ghost Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Ghost Fruit") then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Ghost-Ghost",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Ghost Fruit"))
                     end
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Diamond Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Diamond Fruit") then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Diamond-Diamond",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Diamond Fruit"))
@@ -6112,7 +5919,7 @@ spawn(function()
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Spider Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Spider Fruit") then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Spider-Spider",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Spider Fruit"))
                     end
-                    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Bird: Phoenix Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Phoenix Fruit") then
+                    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Phoenix Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Phoenix Fruit") then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Phoenix",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Phoenix Fruit"))
                     end
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rumble Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rumble Fruit") then
@@ -6141,8 +5948,11 @@ spawn(function()
                     end
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dragon Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Fruit") then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Dragon-Dragon",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Fruit"))
-                        if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Leopard Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Leopard Fruit") then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Leopard-Leopard",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Leopard Fruit"))
+                        if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kitsune Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit") then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Kitsune-Kitsune",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit"))
+                    end
+                        if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kitsune Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit") then
+                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Kitsune-Kitsune",game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit"))
                     end
                 end
                 end
@@ -6151,8 +5961,6 @@ spawn(function()
         wait(0.3)
     end
     end)
-
-
 
 local ToggleRandomFruit = Tabs.Fruit:AddToggle("ToggleRandomFruit", {Title = "Random Fruit",Description = "Đổi Trái", Default = false })
 ToggleRandomFruit:OnChanged(function(Value)
@@ -6169,7 +5977,7 @@ spawn(function()
     end)
 end)
 
-local ToggleCollectTP = Tabs.Fruit:AddToggle("ToggleCollectTP", {Title = "Collect Devil Fruit (TP)",Description = "Nhặt Trái", Default = false })
+local ToggleCollectTP = Tabs.Fruit:AddToggle("ToggleCollectTP", {Title = "Collect Devil Fruit (TP)",Description = "Nhặt Trái (Dịch Chuyển)", Default = false })
 ToggleCollectTP:OnChanged(function(Value)
     getgenv().CollectFruitTP = Value
 end)
@@ -6186,13 +5994,11 @@ spawn(function()
             end
        end)
 
-local ToggleCollect = Tabs.Fruit:AddToggle("ToggleCollect", {Title = "Collect Devil Fruit (Tween)",Description = "Nhặt Trái", Default = false })
+local ToggleCollect = Tabs.Fruit:AddToggle("ToggleCollect", {Title = "Collect Devil Fruit (Tween)",Description = "Nhặt Trái (Bay)", Default = false })
 ToggleCollect:OnChanged(function(Value)
     getgenv().Tweenfruit = Value
 end)
 Options.ToggleCollect:SetValue(false)
-
-
 spawn(function()
     while wait(.1) do
         if getgenv().Tweenfruit then
@@ -6207,8 +6013,7 @@ end)
 
 local Mastery = Tabs.Fruit:AddSection("Esp")
 
-
-local ToggleEspPlayer = Tabs.Fruit:AddToggle("ToggleEspPlayer", {Title = "Esp Player",Description = "Định vị người chơi", Default = false })
+local ToggleEspPlayer = Tabs.Fruit:AddToggle("ToggleEspPlayer", {Title = "Esp Player",Description = "Định vị Người Chơi", Default = false })
 
 ToggleEspPlayer:OnChanged(function(Value)
     ESPPlayer = Value
@@ -6217,7 +6022,7 @@ end)
 Options.ToggleEspPlayer:SetValue(false)
 
 
-local ToggleEspFruit = Tabs.Fruit:AddToggle("ToggleEspFruit", {Title = "Esp Devil Fruit",Description = "Định vị Trái", Default = false })
+local ToggleEspFruit = Tabs.Fruit:AddToggle("ToggleEspFruit", {Title = "Esp Devil Fruit",Description = "Định Vị Trái", Default = false })
 
 ToggleEspFruit:OnChanged(function(Value)
     DevilFruitESP = Value
@@ -6230,7 +6035,7 @@ Options.ToggleEspFruit:SetValue(false)
 
 
 
-local ToggleEspIsland = Tabs.Fruit:AddToggle("ToggleEspIsland", {Title = "Esp Island",Description = "Định vị đảo", Default = false })
+local ToggleEspIsland = Tabs.Fruit:AddToggle("ToggleEspIsland", {Title = "Esp Island",Description = "Định Vị Đảo", Default = false })
 
 ToggleEspIsland:OnChanged(function(Value)
     IslandESP = Value
@@ -6241,7 +6046,7 @@ end)
 Options.ToggleEspIsland:SetValue(false)
 
 
-local ToggleEspFlower = Tabs.Fruit:AddToggle("ToggleEspFlower", {Title = "Esp Flower",Description = "Định vị Hoa", Default = false })
+local ToggleEspFlower = Tabs.Fruit:AddToggle("ToggleEspFlower", {Title = "Esp Flower",Description = "Định Vị Hoa", Default = false })
 
 ToggleEspFlower:OnChanged(function(Value)
     FlowerESP = Value
@@ -6269,18 +6074,8 @@ spawn(function()
         end
     end
 end)
-
-
-
-
-
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Raid
-
-
-
 local Chips = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Buddha","Sand","Phoenix","Dough"}
 
 local DropdownRaid = Tabs.Raid:AddDropdown("DropdownRaid", {
@@ -6290,12 +6085,11 @@ local DropdownRaid = Tabs.Raid:AddDropdown("DropdownRaid", {
     Multi = false,
     Default = 1,
 })
-DropdownRaid:SetValue("...")
+DropdownRaid:SetValue("Flame")
 DropdownRaid:OnChanged(function(Value)
     SelectChip = Value
 end)
-
-local ToggleBuy = Tabs.Raid:AddToggle("ToggleBuy", {Title = "Buy Chip", Description = "Mua Chip",Default = false })
+local ToggleBuy = Tabs.Raid:AddToggle("ToggleBuy", {Title = "Auto Buy Chip", Description = "Mua Chip",Default = false })
 ToggleBuy:OnChanged(function(Value)
     getgenv().Auto_Buy_Chips_Dungeon = Value
 end)
@@ -6316,7 +6110,7 @@ spawn(function()
 end)
 
 
-    local ToggleStart = Tabs.Raid:AddToggle("ToggleStart", {Title = "Start Raid",Description = "Vào Tập Kích", Default = false })
+    local ToggleStart = Tabs.Raid:AddToggle("ToggleStart", {Title = "Auto Start Raid",Description = "Vào Tập Kích", Default = false })
     ToggleStart:OnChanged(function(Value)
         getgenv().Auto_StartRaid = Value
 end)
@@ -6341,14 +6135,14 @@ spawn(function()
 end)
 
 
-local ToggleKillAura = Tabs.Raid:AddToggle("ToggleKillAura", {Title = "Kill Aura",Description = "Giết Quái", Default = false })
+local ToggleKillAura = Tabs.Raid:AddToggle("ToggleKillAura", {Title = "Auto Kill Aura",Description = "Giết Quái", Default = false })
 ToggleKillAura:OnChanged(function(Value)
-    KillAura = Value
+    getgenv().KillAura = Value
 end)
 Options.ToggleKillAura:SetValue(false)
 spawn(function()
     while wait() do
-        if KillAura then
+        if getgenv().KillAura then
             pcall(function()
                 for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
                     if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -6356,7 +6150,7 @@ spawn(function()
                             sethiddenproperty(game:GetService('Players').LocalPlayer,"SimulationRadius",math.huge)
                             v.Humanoid.Health = 0
                             v.HumanoidRootPart.CanCollide = false
-                        until not KillAura or not v.Parent or v.Humanoid.Health <= 0
+                        until not getgenv().KillAura or not v.Parent or v.Humanoid.Health <= 0
                     end
                 end
             end)
@@ -6365,14 +6159,14 @@ spawn(function()
 end)
 
 
-local ToggleNextIsland = Tabs.Raid:AddToggle("ToggleNextIsland", {Title = "Next Island",Description = "Qua Đảo", Default = false })
+local ToggleNextIsland = Tabs.Raid:AddToggle("ToggleNextIsland", {Title = "Auto Next Island",Description = "Qua Đảo", Default = false })
 ToggleNextIsland:OnChanged(function(Value)
-    AutoNextIsland = Value
+    getgenv().AutoNextIsland = Value
 end)
 Options.ToggleNextIsland:SetValue(false)
 spawn(function()
     while task.wait() do
-        if AutoNextIsland then
+        if getgenv().AutoNextIsland then
             pcall(function()
                 if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true then
                     if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5") then
@@ -6396,12 +6190,12 @@ end)
 
 local ToggleAwake = Tabs.Raid:AddToggle("ToggleAwake", {Title = "Auto Awake",Description = "Thức tỉnh V2", Default = false })
 ToggleAwake:OnChanged(function(Value)
-    AutoAwakenAbilities = Value
+    getgenv().AutoAwakenAbilities = Value
 end)
 Options.ToggleAwake:SetValue(false)
 spawn(function()
     while task.wait() do
-        if AutoAwakenAbilities then
+        if getgenv().AutoAwakenAbilities then
             pcall(function()
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Awakener","Awaken")
             end)
@@ -6426,17 +6220,11 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
-
-
-
 local args = {
     [1] = "LoadFruit",
     [2] = "Spin-Spin"
 }
-
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
 
 local args = {
     [1] = "LoadFruit",
@@ -6445,10 +6233,6 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-
-
-
-
 local args = {
     [1] = "LoadFruit",
     [2] = "Spring-Spring"
@@ -6456,14 +6240,12 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-
 local args = {
     [1] = "LoadFruit",
     [2] = "Bomb-Bomb"
 }
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
 
 local args = {
     [1] = "LoadFruit",
@@ -6480,38 +6262,29 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-
 local args = {
     [1] = "LoadFruit",
     [2] = "Flame-Flame"
 }
-
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
 
 local args = {
     [1] = "LoadFruit",
     [2] = "Falcon-Falcon"
 }
-
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
 
 local args = {
     [1] = "LoadFruit",
     [2] = "Ice-Ice"
 }
-
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
 
 local args = {
     [1] = "LoadFruit",
     [2] = "Sand-Sand"
 }
-
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
 
 local args = {
     [1] = "LoadFruit",
@@ -6520,20 +6293,16 @@ local args = {
 
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-
 local args = {
     [1] = "LoadFruit",
     [2] = "Ghost-Ghost"
 }
-
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
 
 local args = {
     [1] = "LoadFruit",
     [2] = "Diamond-Diamond"
 }
-
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
 
@@ -6583,22 +6352,19 @@ elseif Third_Sea then
         })
 end
 
-
-
-
 local Mastery = Tabs.Raid:AddSection("Law Raid")
 
 
 local ToggleLaw = Tabs.Raid:AddToggle("ToggleLaw", {Title = "Auto Law",Description = "Tự mua chip + Đánh boss law", Default = false })
 
 ToggleLaw:OnChanged(function(Value)
-    Auto_Law = Value
+    getgenv().Auto_Law = Value
 end)
 Options.ToggleLaw:SetValue(false)
 spawn(function()
     pcall(function()
         while wait() do
-            if Auto_Law then
+            if getgenv().Auto_Law then
                 if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Microchip") and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Microchip") and not game:GetService("Workspace").Enemies:FindFirstChild("Order") and not game:GetService("ReplicatedStorage"):FindFirstChild("Order") then
                     wait(0.3)
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Microchip","1")
@@ -6612,7 +6378,7 @@ end)
 spawn(function()
     pcall(function()
         while wait(0.4) do
-            if Auto_Law then
+            if getgenv().Auto_Law then
                 if not game:GetService("Workspace").Enemies:FindFirstChild("Order") and not game:GetService("ReplicatedStorage"):FindFirstChild("Order") then
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Microchip") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Microchip") then
                         fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon.Button.Main.ClickDetector)
@@ -6630,7 +6396,7 @@ spawn(function()
                                     v.HumanoidRootPart.CanCollide = false
                                     v.HumanoidRootPart.Size = Vector3.new(120, 120, 120)
                                     --Click
-                                until not v.Parent or v.Humanoid.Health <= 0 or Auto_Law == false
+                                until not v.Parent or v.Humanoid.Health <= 0 or getgenv().Auto_Law == false
                             end
                         end
                     elseif game:GetService("ReplicatedStorage"):FindFirstChild("Order") then
@@ -6645,7 +6411,6 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --RaceV4
 
-
 Tabs.Race:AddButton({
     Title = "Timple Of Time",
     Description = "Đền Thờ",
@@ -6654,9 +6419,8 @@ Tabs.Race:AddButton({
     end
 })
 
-
 Tabs.Race:AddButton({
-    Title = "Lever Pull",
+    Title = "Tween To Lever Pull",
     Description = "Cần Gạt",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
@@ -6666,7 +6430,7 @@ Tabs.Race:AddButton({
 
 
 Tabs.Race:AddButton({
-    Title = "Acient One",
+    Title = "Tween To Acient One",
     Description = "Npc Mua Bánh Răng",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
@@ -6677,7 +6441,7 @@ Tabs.Race:AddButton({
 
 local Mastery = Tabs.Race:AddSection("Auto Race")
 Tabs.Race:AddButton({
-    Title = "Race Door",
+    Title = "Tween To Race Door",
     Description = "Tộc Của bạn",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(28286.35546875, 14895.3017578125, 102.62469482421875))
@@ -6697,13 +6461,11 @@ Tabs.Race:AddButton({
     end
 })
 
-
 local ToggleHumanandghoul = Tabs.Race:AddToggle("ToggleHumanandghoul", {Title = "Auto [ Human / Ghoul ] Trial",Description = "Hoàn thành Tộc quỷ + người", Default = false })
 ToggleHumanandghoul:OnChanged(function(Value)
-    KillAura = Value
+    getgenv().KillAura = Value
 end)
 Options.ToggleHumanandghoul:SetValue(false)
-
 
 local ToggleAutotrial = Tabs.Race:AddToggle("ToggleAutotrial", {Title = "Auto Trial",Description = "Tụ Động hoàn thành ải", Default = false })
 ToggleAutotrial:OnChanged(function(Value)
@@ -6827,12 +6589,11 @@ spawn(function()
     end)
 end)
 
-
 local Mastery = Tabs.Race:AddSection("Auto Train")
 
 local ToggleAutoAcientQuest = Tabs.Race:AddToggle("ToggleAutoAcientQuest", {Title = "Auto Train",Description = "cày + bật tộc", Default = false })
 ToggleAutoAcientQuest:OnChanged(function(Value)
-    AutoFarmAcient = Value
+    getgenv().AutoFarmAcient = Value
 end)
 Options.ToggleAutoAcientQuest:SetValue(false)
 local AcientCframe = CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875)
@@ -6840,9 +6601,9 @@ local AcientCframe = CFrame.new(216.211181640625, 126.9352035522461, -12599.0732
 spawn(function()
     pcall(function()
         while wait() do
-            if AutoFarmAcient then
+            if getgenv().AutoFarmAcient then
                 if game.Players.LocalPlayer.Character.RaceTransformed.Value == true then
-                    AutoFarmAcient = false
+                    getgenv().AutoFarmAcient = false
                     toTarget(CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875))
                 end
             end
@@ -6851,7 +6612,7 @@ spawn(function()
 end)
 spawn(function()
     while wait() do 
-        if AutoFarmAcient then
+        if getgenv().AutoFarmAcient then
             pcall(function()
                 if game:GetService("Workspace").Enemies:FindFirstChild("Cocoa Warrior") or game:GetService("Workspace").Enemies:FindFirstChild("Chocolate Bar Battler") or game:GetService("Workspace").Enemies:FindFirstChild("Sweet Thief") or game:GetService("Workspace").Enemies:FindFirstChild("Candy Rebel") then
                     for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
@@ -6868,7 +6629,7 @@ spawn(function()
                                     FarmPos = v.HumanoidRootPart.CFrame
                                     MonFarm = v.Name
                                     Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                until not AutoFarmAcient or not v.Parent or v.Humanoid.Health <= 0
+                                until not getgenv().AutoFarmAcient or not v.Parent or v.Humanoid.Health <= 0
                           bringmob = false
                             end
                         end
@@ -6883,9 +6644,9 @@ end)
 spawn(function()
     pcall(function()
         while wait() do
-            if AutoFarmAcient then
+            if getgenv().AutoFarmAcient then
                 if game.Players.LocalPlayer.Character.RaceTransformed.Value == false then
-                    AutoFarmAcient = true
+                    getgenv().AutoFarmAcient = true
                 end
             end
         end
@@ -6894,7 +6655,7 @@ end)
 spawn(function()
 while wait() do
     pcall(function()
-        if AutoFarmAcient then
+        if getgenv().AutoFarmAcient then
             game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
             wait(0.1)
             game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
@@ -6902,11 +6663,8 @@ while wait() do
     end)
 end
 end)
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
-
-
 
 Tabs.Shop:AddButton({
 	Title = "Geppo",
@@ -7578,7 +7336,29 @@ spawn(function()
     end
 end)
 end
+--------------------------------------------------------------------------------------------------------------------------------------------
+print("Script Loading Completed !")
+--------------------------------------------------------------------------------------------------------------------------------------------
+-- Addons:
+-- SaveManager (Allows you to have a configuration system)
+-- InterfaceManager (Allows you to have a interface managment system)
+-- Hand the library over to our managers
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+-- Ignore keys that are used by ThemeManager.
+-- (we dont want configs to save themes, do we?)
+SaveManager:IgnoreThemeSettings()
+-- You can add indexes of elements the save manager should ignore
+SaveManager:SetIgnoreIndexes({})
+-- use case for doing it this way:
+-- a script hub could have themes in a global folder
+-- and game configs in a separate folder per game
+InterfaceManager:SetFolder("FaiFaoScriptHub")
+SaveManager:SetFolder("FaiFaoScriptHub/specific-game")
+InterfaceManager:BuildInterfaceSection(Tabs.Setting)
+SaveManager:BuildConfigSection(Tabs.Setting)
+Window:SelectTab(1)
+-- You can use the SaveManager:LoadAutoloadConfig() to load a config
+-- which has been marked to be one that auto loads!
+SaveManager:LoadAutoloadConfig()
 ----------------------------------------------------------------------------------------------------------------------------------------------
-print("Fai Fao Hub Loading Complete !")
-wait(3)
-print("Thanks for Use Script !!")
