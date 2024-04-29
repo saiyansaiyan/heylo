@@ -3092,7 +3092,7 @@ local BoneCFrame = CFrame.new(-9515.75, 174.8521728515625, 6079.40625)
 local BoneCFrame2 = CFrame.new(-9359.453125, 141.32679748535156, 5446.81982421875)
 spawn(function()
     while wait() do
-        if getgenv().AutoBone then
+        if getgenv().ClaimQuestBone and getgenv().AutoBone then
             pcall(function()
                 local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
                 if not string.find(QuestTitle, "Demonic Soul") then
@@ -3138,6 +3138,61 @@ spawn(function()
         end
     end
 end)
+spawn(function()
+    while task.wait(.1) do
+    if not getgenv().ClaimQuestBone and getgenv().AutoBone then
+    pcall(function()
+      toTarget(BoneCFrame)
+      for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+      if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+      if v.Name == "Reborn Skeleton" or v.Name == "Living Zombie" or v.Name == "Demonic Soul" or v.Name == "Posessed Mummy" then
+        repeat wait(getgenv().Fast_Delay)
+        AttackNoCoolDown()
+        AutoHaki()
+        bringmob = true
+        EquipTool(SelectWeapon)
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+        v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+        v.HumanoidRootPart.Transparency = 1
+        v.Humanoid.JumpPower = 0
+        v.Humanoid.WalkSpeed = 0
+        v.HumanoidRootPart.CanCollide = false
+        FarmPos = v.HumanoidRootPart.CFrame
+        MonFarm = v.Name
+        until not getgenv().AutoBone or not v.Parent or v.Humanoid.Health <= 0
+        bringmob = false
+        end     
+        end
+        end
+        for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+        if v.Name == "Reborn Skeleton" then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+        elseif v.Name == "Living Zombie" then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+        elseif v.Name == "Demonic Soul" then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+        elseif v.Name == "Posessed Mummy" then
+        Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+      end
+      end
+      end)
+    end
+    end
+  end)
+
+  local ToggleClaimQuest = Tabs.Main:AddToggle("ToggleClaimQuest", {
+    Title = "Claim Quest",
+    Description = "Nhận Nhiệm Vụ", 
+    Default = false })
+    ToggleClaimQuest:OnChanged(function(Value)
+    getgenv().ClaimQuestBone = Value
+    if Value == false then
+        wait()
+        Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+        wait()
+    end
+end)
+Options.ToggleClaimQuest:SetValue(false)
 
 local ToggleRandomBone = Tabs.Main:AddToggle("ToggleRandomBone", {Title = "Enabled Random Bones",Description = "Đổi xương", Default = false })
 ToggleRandomBone:OnChanged(function(Value)  
